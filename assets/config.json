@@ -1,0 +1,73 @@
+{
+  "personalities": [
+    {
+      "id": "minimalist",
+      "name": "Minimalist Dev",
+      "tools": ["essentials", "vscode", "dev-language"]
+    },
+    {
+      "id": "fullstack",
+      "name": "Fullstack Dev",
+      "tools": ["essentials", "vscode", "chrome", "docker", "dev-language", "dev-storage"]
+    },
+    {
+      "id": "content_creator",
+      "name": "Content Creator",
+      "tools": ["essentials", "vscode", "chrome", "davinci-resolve", "discord", "vlc"]
+    },
+    {
+      "id": "gamer",
+      "name": "Gamer",
+      "tools": ["essentials", "steam", "discord", "chrome"]
+    },
+    {
+      "id": "student",
+      "name": "Student",
+      "tools": ["essentials", "chrome", "vscode", "thunderbird", "vlc"]
+    },
+    {
+      "id": "designer",
+      "name": "Designer",
+      "tools": ["essentials", "chrome", "vscode", "davinci-resolve", "discord"]
+    },
+    {
+      "id": "data_scientist",
+      "name": "Data Scientist",
+      "tools": ["essentials", "vscode", "chrome", "docker", "dev-language", "dev-storage", "virtualbox"]
+    }
+  ],
+  "tools": [
+    {
+      "id": "nodejs",
+      "name": "Node.js & npm"
+    },
+    {
+      "id": "vscode",
+      "name": "VS Code"
+    },
+    {
+      "id": "chrome",
+      "name": "Chrome"
+    },
+    {
+      "id": "docker",
+      "name": "Docker"
+    },
+    {
+      "id": "vlc",
+      "name": "VLC"
+    },
+    {
+      "id": "steam",
+      "name": "Steam"
+    },
+    {
+      "id": "discord",
+      "name": "Discord"
+    },
+    {
+      "id": "davinci",
+      "name": "DaVinci Resolve"
+    }
+  ]
+}
