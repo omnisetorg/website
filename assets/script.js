@@ -170,3 +170,11 @@ function copyToClipboard(elementId) {
 
 // Initialize page when DOM is loaded
 document.addEventListener("DOMContentLoaded", initializePage);
+
+// FAQ toggle
+function toggleFAQ(button) {
+  const content = button.nextElementSibling;
+  const arrow = button.querySelector("svg");
+  content.classList.toggle("hidden");
+  arrow.classList.toggle("rotate-180");
+}
