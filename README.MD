@@ -79,7 +79,7 @@ OmniSet takes security seriously. We:
 To inspect the script before running:
 
 ```bash
-wget -O omniset-install https://omniset.org/install
+wget -O https://omniset.org/install
 ```
 
 ## License
