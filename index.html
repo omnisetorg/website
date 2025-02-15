@@ -4,7 +4,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>X - Modern Dev Environment Setup</title>
+  <title>OmniSet - Modern Dev Environment Setup</title>
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="OmniSet - Modern Linux Environment for Everyone">
+<meta name="description"
+  content="OmniSet automatically configures your perfect Linux environment with one command. Choose from pre-built profiles for developers, gamers, students, designers, and content creators.">
+<meta name="keywords"
+  content="Linux environment, Linux setup, automatic configuration, Linux customization, user profiles, Linux tools, OmniSet, Linux for everyone, easy Linux setup">
+<meta name="author" content="OmniSet">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://omniset.org/">
+<meta property="og:title" content="OmniSet - Modern Linux Environment for Everyone">
+<meta property="og:description"
+  content="Setup your perfect Linux environment with just one command. Pre-built profiles for gamers, developers, students, designers, and content creators - or create your own custom setup.">
+<meta property="og:image" content="https://omniset.org/images/og-banner.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://omniset.org/">
+<meta property="twitter:title" content="OmniSet - Modern Linux Environment for Everyone">
+<meta property="twitter:description"
+  content="One command to set up your perfect Linux environment. Whether you're a gamer, developer, student, or creator - OmniSet has you covered.">
+<meta property="twitter:image" content="https://omniset.org/images/og-banner.png">
+
+<!-- Additional SEO -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#4F46E5">
+<link rel="canonical" href="https://omniset.org/">
+
+<!-- Favicon - derived from the same image -->
+<link rel="icon" type="image/png" href="/images/og-banner.png">
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -16,7 +52,7 @@
         <div>
           <h1
             class="text-7xl font-black bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mb-4">
-            X</h1>
+            OmniSet</h1>
           <p class="text-xl text-gray-600">One command. Perfect environment setup.</p>
         </div>
 
@@ -31,7 +67,7 @@
         <!-- Action Buttons -->
         <div class="flex flex-wrap">
           <div class="inline-flex rounded-full overflow-hidden shadow-md">
-            <a href="https://github.com/x/x"
+            <a href="https://github.com/omnisetorg/install"
               class="inline-flex items-center space-x-2 px-6 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:opacity-90 transition-all">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd"
@@ -51,7 +87,7 @@
               <span>Manual</span>
             </a>
             <div class="w-px bg-white/20"></div>
-            <a href="https://discord.gg/x"
+            <a href="https://discord.gg/nk5HAAgQQH"
               class="inline-flex items-center space-x-2 px-6 py-2.5 bg-gradient-to-r from-pink-500 to-rose-500 text-white hover:opacity-90 transition-all">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -66,25 +102,28 @@
         <!-- FAQ Section -->
         <div class="mt-6 max-w-xl">
           <div class="space-y-0.5">
-            <!-- What is X? -->
+            <!-- What is OmniSet? -->
             <div class="border-b border-gray-200">
-              <button class="w-full flex justify-between items-center py-2 text-left hover:text-gray-600 transition-colors"
+              <button
+                class="w-full flex justify-between items-center py-2 text-left hover:text-gray-600 transition-colors"
                 onclick="toggleFAQ(this)">
-                <span class="text-base text-gray-900">What is X?</span>
+                <span class="text-base text-gray-900">What is OmniSet?</span>
                 <svg class="w-4 h-4 transform transition-transform text-gray-700" fill="none" stroke="currentColor"
                   viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </button>
               <div class="pb-2 text-sm text-gray-600 hidden">
-                X is a script that automatically sets up your perfect Linux environment based on your needs - whether you're a
+                OmniSet is a script that automatically sets up your perfect Linux environment based on your needs -
+                whether you're a
                 developer, gamer, student, or content creator.
               </div>
             </div>
-        
+
             <!-- Supported Platforms -->
             <div class="border-b border-gray-200">
-              <button class="w-full flex justify-between items-center py-2 text-left hover:text-gray-600 transition-colors"
+              <button
+                class="w-full flex justify-between items-center py-2 text-left hover:text-gray-600 transition-colors"
                 onclick="toggleFAQ(this)">
                 <span class="text-base text-gray-900">Which platforms are supported?</span>
                 <svg class="w-4 h-4 transform transition-transform text-gray-700" fill="none" stroke="currentColor"
@@ -93,14 +132,16 @@
                 </svg>
               </button>
               <div class="pb-2 text-sm text-gray-600 hidden">
-                X works on most Debian-based Linux distributions including Ubuntu, Debian, Raspberry Pi OS, Linux Mint,
+                OmniSet works on most Debian-based Linux distributions including Ubuntu, Debian, Raspberry Pi OS, Linux
+                Mint,
                 Elementary OS, Pop!_OS, and Zorin OS.
               </div>
             </div>
-        
+
             <!-- Is it customizable? -->
             <div class="border-b border-gray-200">
-              <button class="w-full flex justify-between items-center py-2 text-left hover:text-gray-600 transition-colors"
+              <button
+                class="w-full flex justify-between items-center py-2 text-left hover:text-gray-600 transition-colors"
                 onclick="toggleFAQ(this)">
                 <span class="text-base text-gray-900">Is it customizable?</span>
                 <svg class="w-4 h-4 transform transition-transform text-gray-700" fill="none" stroke="currentColor"
@@ -109,7 +150,8 @@
                 </svg>
               </button>
               <div class="pb-2 text-sm text-gray-600 hidden">
-                Yes! You can choose from predefined personalities or create a custom setup by selecting individual tools and
+                Yes! You can choose from predefined personalities or create a custom setup by selecting individual tools
+                and
                 applications you need.
               </div>
             </div>
@@ -137,7 +179,7 @@
           <div id="quick-install">
             <div class="bg-gray-50 rounded-xl p-4 flex items-center border border-gray-200">
               <code id="quick-install-command"
-                class="flex-grow font-mono text-indigo-600">wget -qO- https://x.org/install | bash</code>
+                class="flex-grow font-mono text-indigo-600">wget -qO- https://omniset.org/install | bash</code>
               <button onclick="copyToClipboard('quick-install-command')"
                 class="ml-4 p-2 hover:bg-gray-100 rounded-lg transition-colors">
                 <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,24 +211,23 @@
               </div>
 
               <div class="bg-gray-50 rounded-xl p-4 flex items-center border border-gray-200">
-                <code id="custom-command"
-                  class="flex-grow font-mono text-indigo-600">wget -qO- https://x.org/install?personality=minimalist | bash</code>
-                <button onclick="copyToClipboard('custom-command')"
-                  class="ml-4 p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                  <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3">
-                    </path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="assets/script.js"></script>
+<code id="custom-command"
+  class="flex-grow font-mono text-indigo-600">wget -qO- https://omniset.org/install?personality=minimalist | bash</code>
+<button onclick="copyToClipboard('custom-command')" class="ml-4 p-2 hover:bg-gray-100 rounded-lg transition-colors">
+  <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3">
+    </path>
+  </svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="assets/script.js"></script>
 </body>
 
 </html>

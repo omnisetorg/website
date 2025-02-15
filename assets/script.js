@@ -144,9 +144,9 @@ function updateInstallCommand() {
     )
       .map((cb) => cb.id)
       .join(",");
-    commandElement.textContent = `wget -qO- https://x.org/install?tools=${selectedTools} | bash`;
+    commandElement.textContent = `wget -qO- https://omniset.org/install?tools=${selectedTools} | bash`;
   } else {
-    commandElement.textContent = `wget -qO- https://x.org/install?personality=${selectedPersonality} | bash`;
+    commandElement.textContent = `wget -qO- https://omniset.org/install?personality=${selectedPersonality} | bash`;
   }
 }
 
