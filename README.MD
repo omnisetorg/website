@@ -13,48 +13,19 @@ OmniSet is an automated setup script that configures your Linux environment base
 wget -qO- https://omniset.org/install | bash
 ```
 
-## Features
+## Useful Commands
 
-- Pre-configured profiles for different user types (Developer, Gamer, Student, etc.)
-- Custom profile creation with hand-picked tools
-- Support for most Debian-based Linux distributions
-- Automated installation and configuration of popular tools and applications
-- Easy to use interactive mode
-
-## Supported Profiles
-
-- **Minimalist Dev**: Essential development tools + VSCode
-- **Fullstack Dev**: Complete development environment including Docker and databases
-- **Content Creator**: Media tools, editing software, and streaming applications
-- **Gamer**: Steam, Discord, and gaming utilities
-- **Student**: Academic and productivity tools
-- **Designer**: Creative and design applications
-- **Data Scientist**: Data analysis and machine learning tools
-
-## System Requirements
-
-- Debian-based Linux distribution (Ubuntu, Debian, Linux Mint, etc.)
-- Bash shell
-- Internet connection
-
-## Usage
-
-### Quick Install (Interactive)
+- Continuously watch for changes in the `style.css` file, updating the output file whenever changes occur.
 
 ```bash
-wget -qO- https://omniset.org/install | bash
+npx @tailwindcss/cli -i ./assets/style.css -o ./assets/style.min.css --watch
 ```
 
-### Install Specific Profile
+* Generate a minified version of the CSS
 
 ```bash
-wget -qO- https://omniset.org/install?personality=minimalist | bash
-```
+npx @tailwindcss/cli -i ./assets/style.css -o ./assets/style.min.css --minify 
 
-### Custom Installation
-
-```bash
-wget -qO- https://omniset.org/install?tools=vscode,docker,nodejs | bash
 ```
 
 ## Contributing
