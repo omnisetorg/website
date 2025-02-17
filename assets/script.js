@@ -6,20 +6,123 @@ let selectedPersonality = "minimalist";
 // Initialize the page
 async function initializePage() {
   try {
-    const response = await fetch("assets/config.json");
-    config = await response.json();
+    // Instead of fetching, use the hardcoded config since we have it
+    config = {
+      personalities: [
+        {
+          id: "minimalist",
+          name: "Minimalist Dev",
+          tools: ["essentials", "vscode", "dev-language"],
+        },
+        {
+          id: "fullstack",
+          name: "Fullstack Dev",
+          tools: [
+            "essentials",
+            "vscode",
+            "chrome",
+            "docker",
+            "dev-language",
+            "dev-storage",
+          ],
+        },
+        {
+          id: "content_creator",
+          name: "Content Creator",
+          tools: [
+            "essentials",
+            "vscode",
+            "chrome",
+            "davinci-resolve",
+            "discord",
+            "vlc",
+          ],
+        },
+        {
+          id: "gamer",
+          name: "Gamer",
+          tools: ["essentials", "steam", "discord", "chrome"],
+        },
+        {
+          id: "student",
+          name: "Student",
+          tools: ["essentials", "chrome", "vscode", "thunderbird", "vlc"],
+        },
+        {
+          id: "designer",
+          name: "Designer",
+          tools: [
+            "essentials",
+            "chrome",
+            "vscode",
+            "davinci-resolve",
+            "discord",
+          ],
+        },
+        {
+          id: "data_scientist",
+          name: "Data Scientist",
+          tools: [
+            "essentials",
+            "vscode",
+            "chrome",
+            "docker",
+            "dev-language",
+            "dev-storage",
+            "virtualbox",
+          ],
+        },
+      ],
+      tools: [
+        {
+          id: "nodejs",
+          name: "Node.js & npm",
+        },
+        {
+          id: "vscode",
+          name: "VS Code",
+        },
+        {
+          id: "chrome",
+          name: "Chrome",
+        },
+        {
+          id: "docker",
+          name: "Docker",
+        },
+        {
+          id: "vlc",
+          name: "VLC",
+        },
+        {
+          id: "steam",
+          name: "Steam",
+        },
+        {
+          id: "discord",
+          name: "Discord",
+        },
+        {
+          id: "davinci",
+          name: "DaVinci Resolve",
+        },
+      ],
+    };
+
     populateFeatures();
     initializePersonalities();
     initializeTools();
     setupEventListeners();
   } catch (error) {
-    console.error("Error loading configuration:", error);
+    console.error("Error initializing page:", error);
   }
 }
 
 // Populate features section
 function populateFeatures() {
   const featuresContainer = document.querySelector("[data-features-container]");
+  if (!featuresContainer) return;
+
   const features = config.personalities
     .slice(0, 3)
     .map(
@@ -42,6 +145,8 @@ function populateFeatures() {
 // Initialize personalities section
 function initializePersonalities() {
   const container = document.querySelector("[data-personalities-container]");
+  if (!container) return;
+
   const personalitiesHtml =
     config.personalities
       .map(
@@ -67,6 +172,8 @@ function initializePersonalities() {
 // Initialize tools section
 function initializeTools() {
   const container = document.querySelector("[data-tools-container]");
+  if (!container) return;
+
   const toolsHtml = config.tools
     .map(
       (tool) => `
@@ -85,6 +192,12 @@ function initializeTools() {
 function setupEventListeners() {
   // Tab switching
   document.querySelectorAll("[data-tab]").forEach((button) => {
+    // Temporarily disable custom build tab
+    if (button.dataset.tab === "custom") {
+      button.disabled = true;
+      button.classList.add("opacity-50", "cursor-not-allowed");
+      return;
+    }
     button.addEventListener("click", () => switchTab(button.dataset.tab));
   });
 
@@ -95,7 +208,7 @@ function setupEventListeners() {
 
   // Tool selection
   document.querySelectorAll("[data-tool]").forEach((checkbox) => {
-    checkbox.addEventListener("change", updateCustomCommand);
+    checkbox.addEventListener("change", updateInstallCommand);
   });
 }
 
@@ -105,6 +218,8 @@ function switchTab(tab) {
   const customTab = document.querySelector('[data-tab="custom"]');
   const quickInstall = document.getElementById("quick-install");
   const customBuilder = document.getElementById("custom-builder");
+
+  if (!quickTab || !customTab || !quickInstall || !customBuilder) return;
 
   activeTab = tab;
   if (tab === "quick") {
@@ -122,14 +237,17 @@ function switchTab(tab) {
     quickInstall.classList.add("hidden");
     customBuilder.classList.remove("hidden");
   }
+  updateInstallCommand();
 }
 
 // Handle personality selection changes
 function handlePersonalityChange(event) {
   selectedPersonality = event.target.value;
   const customTools = document.getElementById("custom-tools");
-  customTools.style.display =
-    selectedPersonality === "custom" ? "block" : "none";
+  if (customTools) {
+    customTools.style.display =
+      selectedPersonality === "custom" ? "block" : "none";
+  }
   updateInstallCommand();
 }
 
@@ -138,21 +256,25 @@ function updateInstallCommand() {
   const commandElement = document.getElementById(
     activeTab === "quick" ? "quick-install-command" : "custom-command"
   );
+  if (!commandElement) return;
+
   if (selectedPersonality === "custom") {
     const selectedTools = Array.from(
       document.querySelectorAll("[data-tool]:checked")
     )
       .map((cb) => cb.id)
       .join(",");
-    commandElement.textContent = `wget -qO- https://omniset.org/install?tools=${selectedTools} | bash`;
+    commandElement.textContent = `wget -qO- https://x.org/install?tools=${selectedTools} | bash`;
   } else {
-    commandElement.textContent = `wget -qO- https://omniset.org/install?personality=${selectedPersonality} | bash`;
+    commandElement.textContent = `wget -qO- https://x.org/install?personality=${selectedPersonality} | bash`;
   }
 }
 
 // Copy command to clipboard
 function copyToClipboard(elementId) {
   const element = document.getElementById(elementId);
+  if (!element) return;
+
   const text = element.textContent;
 
   navigator.clipboard
@@ -168,13 +290,15 @@ function copyToClipboard(elementId) {
     });
 }
 
-// Initialize page when DOM is loaded
-document.addEventListener("DOMContentLoaded", initializePage);
-
 // FAQ toggle
 function toggleFAQ(button) {
   const content = button.nextElementSibling;
   const arrow = button.querySelector("svg");
+  if (!content || !arrow) return;
+
   content.classList.toggle("hidden");
   arrow.classList.toggle("rotate-180");
 }
+
+// Initialize page when DOM is loaded
+document.addEventListener("DOMContentLoaded", initializePage);
