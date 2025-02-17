@@ -40,13 +40,6 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## Security
 
-OmniSet takes security seriously. We:
-
-- Sign all releases
-- Use HTTPS for downloads
-- Verify package signatures
-- Support script inspection before execution
-
 To inspect the script before running:
 
 ```bash
