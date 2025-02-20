@@ -69,5 +69,31 @@
       "id": "davinci",
       "name": "DaVinci Resolve"
     }
+  ],
+  "faq": [
+    {
+      "question": "What is OmniSet?",
+      "answer": "OmniSet is an automated script that configures your Linux environment based on your needs and preferences. It streamlines the setup process by installing and configuring essential tools and applications for different use cases."
+    },
+    {
+      "question": "Which platforms are supported?",
+      "answer": "OmniSet is compatible with Debian-based Linux distributions including Ubuntu, Debian, Raspberry Pi OS, Linux Mint, Elementary OS, Pop!_OS, and Zorin OS. Each distribution is thoroughly tested to ensure compatibility."
+    },
+    {
+      "question": "Is it customizable?",
+      "answer": "Yes! OmniSet offers extensive customization options. You can choose from predefined profiles or create a custom setup by selecting individual tools and applications. You can also modify configurations after installation."
+    },
+    {
+      "question": "How secure is it?",
+      "answer": "OmniSet prioritizes security. The script is open-source, allowing community review. It only installs packages from official repositories, verifies package signatures, and follows security best practices. You can inspect the script before running it."
+    },
+    {
+      "question": "What are the system requirements?",
+      "answer": "Minimum requirements vary based on your needs. For basic development setup: 4GB RAM, 40GB storage, and a modern CPU. For heavier workloads like gaming or content creation, we recommend 8GB RAM and 60GB + storage."
+    },
+    {
+      "question": "Can I undo the changes?",
+      "answer": "Yes, OmniSet keeps a detailed log of all changes and installed packages. It includes an uninstall script that can revert the system to its previous state. You can also selectively remove individual components through the package manager."
+    }
   ]
 }

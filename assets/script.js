@@ -6,116 +6,59 @@ let selectedPersonality = "minimalist";
 // Initialize the page
 async function initializePage() {
   try {
-    // Instead of fetching, use the hardcoded config since we have it
-    config = {
-      personalities: [
-        {
-          id: "minimalist",
-          name: "Minimalist Dev",
-          tools: ["essentials", "vscode", "dev-language"],
-        },
-        {
-          id: "fullstack",
-          name: "Fullstack Dev",
-          tools: [
-            "essentials",
-            "vscode",
-            "chrome",
-            "docker",
-            "dev-language",
-            "dev-storage",
-          ],
-        },
-        {
-          id: "content_creator",
-          name: "Content Creator",
-          tools: [
-            "essentials",
-            "vscode",
-            "chrome",
-            "davinci-resolve",
-            "discord",
-            "vlc",
-          ],
-        },
-        {
-          id: "gamer",
-          name: "Gamer",
-          tools: ["essentials", "steam", "discord", "chrome"],
-        },
-        {
-          id: "student",
-          name: "Student",
-          tools: ["essentials", "chrome", "vscode", "thunderbird", "vlc"],
-        },
-        {
-          id: "designer",
-          name: "Designer",
-          tools: [
-            "essentials",
-            "chrome",
-            "vscode",
-            "davinci-resolve",
-            "discord",
-          ],
-        },
-        {
-          id: "data_scientist",
-          name: "Data Scientist",
-          tools: [
-            "essentials",
-            "vscode",
-            "chrome",
-            "docker",
-            "dev-language",
-            "dev-storage",
-            "virtualbox",
-          ],
-        },
-      ],
-      tools: [
-        {
-          id: "nodejs",
-          name: "Node.js & npm",
-        },
-        {
-          id: "vscode",
-          name: "VS Code",
-        },
-        {
-          id: "chrome",
-          name: "Chrome",
-        },
-        {
-          id: "docker",
-          name: "Docker",
-        },
-        {
-          id: "vlc",
-          name: "VLC",
-        },
-        {
-          id: "steam",
-          name: "Steam",
-        },
-        {
-          id: "discord",
-          name: "Discord",
-        },
-        {
-          id: "davinci",
-          name: "DaVinci Resolve",
-        },
-      ],
-    };
+    // Fetch the config file
+    const response = await fetch("../assets/config.json");
+    config = await response.json();
+    console.log("Loaded config:", config); // Debug log
 
     populateFeatures();
     initializePersonalities();
     initializeTools();
+    populateProfiles(); // Added this line
+    populateFAQ();
     setupEventListeners();
   } catch (error) {
     console.error("Error initializing page:", error);
   }
+}
+
+// Populate profiles section
+function populateProfiles() {
+  const profilesContainer = document.querySelector("[data-profiles-container]");
+  if (!profilesContainer) {
+    console.log("Profiles container not found"); // Debug log
+    return;
+  }
+
+  console.log("Generating profiles HTML for:", config.personalities); // Debug log
+
+  const profilesHtml = config.personalities
+    .map(
+      (profile) => `
+    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+      <h3 class="text-xl font-semibold mb-2">${profile.name}</h3>
+      <div class="text-gray-600 mb-4">Includes essential tools for ${profile.name.toLowerCase()} workflows.</div>
+      <div class="space-y-2">
+        ${profile.tools
+          .map(
+            (tool) => `
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>${tool}</span>
+          </div>
+        `
+          )
+          .join("")}
+      </div>
+    </div>
+  `
+    )
+    .join("");
+
+  console.log("Generated profiles HTML:", profilesHtml.slice(0, 100) + "..."); // Debug log
+  profilesContainer.innerHTML = profilesHtml;
 }
 
 // Populate features section
@@ -140,6 +83,34 @@ function populateFeatures() {
     )
     .join("");
   featuresContainer.innerHTML = features;
+}
+
+// Populate FAQ section
+function populateFAQ() {
+  const faqContainer = document.querySelector("[data-faq-container]");
+  if (!faqContainer) return;
+
+  const faqHtml = config.faq
+    .map(
+      (item) => `
+    <div class="border-b border-gray-200">
+      <button class="w-full flex justify-between items-center py-2 text-left hover:text-gray-600 transition-colors"
+        onclick="toggleFAQ(this)">
+        <span class="text-base text-gray-900">${item.question}</span>
+        <svg class="w-4 h-4 transform transition-transform text-gray-700" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div class="pb-2 text-sm text-gray-600 hidden">
+        ${item.answer}
+      </div>
+    </div>
+  `
+    )
+    .join("");
+
+  faqContainer.innerHTML = faqHtml;
 }
 
 // Initialize personalities section
@@ -264,9 +235,9 @@ function updateInstallCommand() {
     )
       .map((cb) => cb.id)
       .join(",");
-    commandElement.textContent = `wget -qO- https://x.org/install?tools=${selectedTools} | bash`;
+    commandElement.textContent = `wget -qO- https://omniset.org/install?tools=${selectedTools} | bash`;
   } else {
-    commandElement.textContent = `wget -qO- https://x.org/install?personality=${selectedPersonality} | bash`;
+    commandElement.textContent = `wget -qO- https://omniset.org/install?personality=${selectedPersonality} | bash`;
   }
 }
 
