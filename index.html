@@ -94,21 +94,21 @@
       <!-- Right Column - Installation -->
       <div>
         <div class="bg-white rounded-2xl shadow-xl p-8">
-          <!-- Quick Install Section -->
-          <div id="quick-install">
-            <div class="bg-gray-50 rounded-xl p-4 flex items-center border border-gray-200">
-              <code id="quick-install-command"
-                class="flex-grow font-mono text-indigo-600">wget -qO- https://omniset.org/install | bash</code>
-              <button onclick="copyToClipboard('quick-install-command')"
-                class="ml-4 p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3">
-                  </path>
-                </svg>
-              </button>
-            </div>
+          <h3 class="text-xl font-semibold mb-4">Quick Install</h3>
+          <p class="text-gray-600 mb-4">For a base installation with essential tools, run:</p>
+          <div class="bg-gray-50 rounded-xl p-4 flex items-center border border-gray-200">
+            <code id="quick-install-command"
+              class="flex-grow font-mono text-indigo-600">wget -qO- https://omniset.org/install | bash</code>
+            <button onclick="copyToClipboard('quick-install-command')"
+              class="ml-4 p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3">
+                </path>
+              </svg>
+            </button>
           </div>
+          <p class="text-gray-600 mt-4">Or choose a profile below for a customized setup.</p>
         </div>
       </div>
     </div>
@@ -117,24 +117,26 @@
   <!-- Full-width content sections -->
   <div class="w-full bg-white py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-8">How It Works</h2>
+      <h2 class="text-3xl font-bold mb-8">Installation Options</h2>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="p-6 bg-gray-50 rounded-lg">
           <div class="text-2xl font-bold text-indigo-600 mb-4">1</div>
-          <h3 class="text-xl font-semibold mb-2">Choose Your Profile</h3>
-          <p class="text-gray-600">Select from pre-built profiles for developers, gamers, students, or create a custom
-            setup.</p>
+          <h3 class="text-xl font-semibold mb-2">Choose Your Setup</h3>
+          <p class="text-gray-600">Run the base installation for essentials, pick a pre-built profile, or customize your
+            own setup with specific tools.</p>
         </div>
         <div class="p-6 bg-gray-50 rounded-lg">
           <div class="text-2xl font-bold text-indigo-600 mb-4">2</div>
-          <h3 class="text-xl font-semibold mb-2">Run the Command</h3>
-          <p class="text-gray-600">Execute a single command and let OmniSet handle the entire setup process
-            automatically.</p>
+          <h3 class="text-xl font-semibold mb-2">Install With One Command</h3>
+          <p class="text-gray-600">Use the standard command for base install, or add <span
+              class="font-mono text-sm">?profile=dev</span> for a specific profile. Example: <span
+              class="font-mono text-sm">?profile=gamer</span></p>
         </div>
         <div class="p-6 bg-gray-50 rounded-lg">
           <div class="text-2xl font-bold text-indigo-600 mb-4">3</div>
-          <h3 class="text-xl font-semibold mb-2">Start Working</h3>
-          <p class="text-gray-600">Your environment is ready with all the tools and configurations you need.</p>
+          <h3 class="text-xl font-semibold mb-2">Customize Further</h3>
+          <p class="text-gray-600">After installation, you can add more tools or modify your setup anytime using the
+            included management tools.</p>
         </div>
       </div>
     </div>
@@ -142,7 +144,11 @@
 
   <div class="w-full py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-8">Available Profiles</h2>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold mb-4">Pre-built Profiles</h2>
+        <p class="text-gray-600">Choose from our curated profiles or use them as a starting point for your custom setup.
+          Add "?profile=NAME" to the installation command to use a specific profile.</p>
+      </div>
       <div class="grid md:grid-cols-4 gap-6" data-profiles-container>
         <!-- Profiles will be populated dynamically -->
       </div>
