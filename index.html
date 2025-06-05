@@ -4,10 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OmniSet - Modern Linux Environment for Everyone</title>
+  <title>OmniSet - Switch to Linux Without the Hassle</title>
 
-  <!-- Primary Meta Tags -->
-  <meta name="title" content="OmniSet - Modern Linux Environment for Everyone">
+  <!-- Meta Tags -->
+  <meta name="description"
+    content="Transform any Linux distribution into a familiar environment that works like macOS or Windows." />
+  <meta name="title" content="OmniSet - Switch to Linux Without the Hassle">
   <meta name="description"
     content="OmniSet automatically configures your perfect Linux environment with one command. Choose from pre-built profiles for developers, gamers, students, designers, and content creators.">
   <meta name="keywords"
@@ -18,14 +20,14 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://omniset.org/">
-  <meta property="og:title" content="OmniSet - Modern Linux Environment for Everyone">
+  <meta property="og:title" content="OmniSet - Switch to Linux Without the Hassle">
   <meta property="og:description"
     content="Setup your perfect Linux environment with just one command. Pre-built profiles for gamers, developers, students, designers, and content creators - or create your own custom setup.">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://omniset.org/">
-  <meta property="twitter:title" content="OmniSet - Modern Linux Environment for Everyone">
+  <meta property="twitter:title" content="OmniSet - Switch to Linux Without the Hassle">
   <meta property="twitter:description"
     content="One command to set up your perfect Linux environment. Whether you're a gamer, developer, student, or creator - OmniSet has you covered.">
   
@@ -34,107 +36,292 @@
   <meta name="theme-color" content="#4F46E5">
   <link rel="canonical" href="https://omniset.org/">
 
-  <!-- Include the Tailwind CSS stylesheet -->
-  <link href="assets/style.min.css" rel="stylesheet">
-
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="./assets/style.min.css">
 </head>
 
 <body class="bg-white text-gray-900">
   <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col md:flex-row justify-center items-center px-6 py-16 md:py-32 bg-gray-100">
-    <div class="md:w-1/2 text-center md:text-left">
-      <h1 class="text-3xl md:text-5xl font-extrabold mb-4">Omniset</h1>
-      <p class="text-base md:text-xl max-w-md mb-6">The one-command setup for a better Linux experience.</p>
-      <div class="flex justify-center md:justify-start space-x-4">
-        <a href="https://github.com/omniset/omniset"
-          class="px-6 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800">Get Started</a>
-        <a href="https://github.com/omniset/omniset"
-          class="px-6 py-3 border border-gray-900 rounded-full font-semibold hover:bg-gray-100">View on GitHub</a>
-      </div>
-    </div>
-    <div class="md:w-1/2 mt-10 md:mt-0">
-      <img src="https://omniset.org/assets/hero-preview.png" alt="Omniset preview"
-        class="w-full rounded-xl shadow-lg" />
-    </div>
-  </section>
+  <section class="relative bg-gradient-hero text-white py-16 md:py-24 overflow-hidden">
+    <div class="absolute inset-0 hero-pattern"></div>
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="text-center">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">OmniSet</h1>
+        <p class="text-xl md:text-2xl font-medium mb-4 text-white/90">Switch to Linux Without the Hassle</p>
+        <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-white/80 leading-relaxed">
+          Transform any Linux distribution into a familiar environment that works like macOS or Windows. Perfect for
+          first-time Linux users who want everything to just work.
+        </p>
 
-  <!-- How It Works -->
-  <section class="py-20 px-6 text-center bg-white">
-    <h2 class="text-3xl font-bold mb-10">How it works</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <div>
-        <h3 class="text-xl font-semibold mb-2">1. Install Omniset</h3>
-        <p>Run the command: <code
-            class="bg-gray-100 px-2 py-1 rounded">bash &lt;(curl -s https://omniset.org/install.sh)</code></p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">2. Choose your setup</h3>
-        <p>Pick your flavor — minimal, full-stack, creative, or custom.</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">3. Relax</h3>
-        <p>We handle installs, configs, themes, and tooling automatically.</p>
+        <div class="mb-16">
+          <div
+            class="inline-block bg-white/95 text-gray-900 px-8 py-4 rounded-xl font-mono text-base md:text-lg shadow-xl cursor-pointer hover:bg-white hover:-translate-y-1 transition-all duration-300 border-2 border-transparent hover:shadow-2xl"
+            onclick="copyToClipboard(this)">
+            wget -qO- https://omniset.org/install | bash
+          </div>
+          <div class="text-sm text-white/70 mt-3">Click to copy command</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Feature Section: Text Left, Image Right -->
-  <section class="py-20 px-6 bg-gray-50">
-    <div class="flex flex-col md:flex-row items-center max-w-6xl mx-auto gap-10">
-      <div class="md:w-1/2">
-        <h3 class="text-2xl font-bold mb-4">Smart Defaults, Fast Setup</h3>
-        <p class="mb-4">Omniset comes preconfigured with carefully chosen defaults to give you the smoothest Linux
-          experience out of the box. No bloat. No stress. Just the right tools.</p>
+  <!-- Distributions Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Compatibility list</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          OmniSet is compatible with all major Debian-based Linux distributions. Choose your favorite or start with
+          Ubuntu if you're new to Linux.
+        </p>
       </div>
-      <div class="md:w-1/2">
-        <img src="https://omniset.org/assets/defaults.png" alt="Smart Defaults" class="rounded-xl shadow" />
+
+      <div class="relative max-w-full mx-auto mb-12 overflow-hidden">
+        <div class="flex gap-8 py-4 overflow-x-auto distros-slider">
+          <a href="https://ubuntu.com" target="_blank"
+            class="flex-shrink-0 w-40 text-center p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-gradient-ubuntu rounded-2xl flex items-center justify-center text-white">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 12h8M12 8v8" stroke="#E95420" stroke-width="2" />
+              </svg>
+            </div>
+            <div class="font-semibold text-gray-900 mb-1">Ubuntu</div>
+            <div class="text-sm text-gray-600">Most popular</div>
+          </a>
+
+          <a href="https://debian.org" target="_blank"
+            class="flex-shrink-0 w-40 text-center p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-gradient-debian rounded-2xl flex items-center justify-center text-white">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" />
+              </svg>
+            </div>
+            <div class="font-semibold text-gray-900 mb-1">Debian</div>
+            <div class="text-sm text-gray-600">Rock solid</div>
+          </a>
+
+          <a href="https://linuxmint.com" target="_blank"
+            class="flex-shrink-0 w-40 text-center p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-gradient-mint rounded-2xl flex items-center justify-center text-white">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                <circle cx="12" cy="12" r="8" />
+                <path d="M8 12l2 2 4-4" stroke="#87CF3E" stroke-width="2" fill="none" />
+              </svg>
+            </div>
+            <div class="font-semibold text-gray-900 mb-1">Linux Mint</div>
+            <div class="text-sm text-gray-600">Beginner friendly</div>
+          </a>
+
+          <a href="https://pop.system76.com" target="_blank"
+            class="flex-shrink-0 w-40 text-center p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+            <div class="w-16 h-16 mx-auto mb-4 bg-gradient-pop rounded-2xl flex items-center justify-center text-white">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z" />
+              </svg>
+            </div>
+            <div class="font-semibold text-gray-900 mb-1">Pop!_OS</div>
+            <div class="text-sm text-gray-600">Developer focused</div>
+          </a>
+
+          <a href="https://elementary.io" target="_blank"
+            class="flex-shrink-0 w-40 text-center p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-gradient-elementary rounded-2xl flex items-center justify-center text-white">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                <circle cx="12" cy="12" r="4" fill="#5C5F77" />
+              </svg>
+            </div>
+            <div class="font-semibold text-gray-900 mb-1">Elementary OS</div>
+            <div class="text-sm text-gray-600">Beautiful design</div>
+          </a>
+
+          <a href="https://zorin.com/os" target="_blank"
+            class="flex-shrink-0 w-40 text-center p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-gradient-zorin rounded-2xl flex items-center justify-center text-white">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <path d="M9 9h6v6H9z" fill="#15A6F0" />
+              </svg>
+            </div>
+            <div class="font-semibold text-gray-900 mb-1">Zorin OS</div>
+            <div class="text-sm text-gray-600">Windows-like</div>
+          </a>
+
+          <a href="https://kali.org" target="_blank"
+            class="flex-shrink-0 w-40 text-center p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-gradient-kali rounded-2xl flex items-center justify-center text-white">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2L3 9l9 7 9-7-9-7z" />
+                <path d="M12 16l-6-5 6 5 6-5-6 5z" />
+              </svg>
+            </div>
+            <div class="font-semibold text-gray-900 mb-1">Kali Linux</div>
+            <div class="text-sm text-gray-600">Security focused</div>
+          </a>
+
+          <a href="https://raspberrypi.org" target="_blank"
+            class="flex-shrink-0 w-40 text-center p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+            <div class="w-16 h-16 mx-auto mb-4 bg-gradient-pi rounded-2xl flex items-center justify-center text-white">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                <circle cx="12" cy="12" r="8" />
+                <circle cx="8" cy="8" r="2" fill="#C51A4A" />
+                <circle cx="16" cy="8" r="2" fill="#C51A4A" />
+                <circle cx="8" cy="16" r="2" fill="#C51A4A" />
+                <circle cx="16" cy="16" r="2" fill="#C51A4A" />
+              </svg>
+            </div>
+            <div class="font-semibold text-gray-900 mb-1">Raspberry Pi OS</div>
+            <div class="text-sm text-gray-600">ARM compatible</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p class="text-gray-600 mb-6 text-lg">
+          <strong class="text-gray-900">New to Linux?</strong> Start with Ubuntu - it has the best hardware support and
+          largest community.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Feature Section: Image Left, Text Right -->
-  <section class="py-20 px-6 bg-white">
-    <div class="flex flex-col md:flex-row-reverse items-center max-w-6xl mx-auto gap-10">
-      <div class="md:w-1/2">
-        <h3 class="text-2xl font-bold mb-4">One Command. Infinite Relief.</h3>
-        <p class="mb-4">Get started in seconds. Omniset is built for new users who want an optimized desktop without
-          having to become sysadmins first.</p>
+  <!-- Simple Setup Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Designed for users with simplicity in mind.</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Until now, the biggest barrier to Linux has been the sheer complication of setting everything up correctly.
+          Unless you have IT experience, concepts like package managers, desktop environments, and configurations might
+          make your eyes glaze over.
+        </p>
       </div>
-      <div class="md:w-1/2">
-        <img src="https://omniset.org/assets/terminal.png" alt="One Command Setup" class="rounded-xl shadow" />
+
+      <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div class="text-center md:text-left">
+          <h3 class="text-2xl font-semibold mb-4 text-gray-900">No Command Line Required</h3>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Everything happens automatically. You don't need to learn terminal commands or edit configuration files.
+            Just run one command and relax.
+          </p>
+        </div>
+
+        <div class="text-center md:text-left">
+          <h3 class="text-2xl font-semibold mb-4 text-gray-900">Familiar Interface</h3>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Looks and feels like what you're used to. Software and workflows that make sense coming
+            from Mac or Windows.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- OS Compatibility -->
-  <section class="py-20 px-6 bg-gray-100 text-center">
-    <h2 class="text-3xl font-bold mb-10">Works on your favorite distro</h2>
-    <div class="flex flex-wrap justify-center items-center gap-8">
-      <img src="https://omniset.org/assets/debian.svg" alt="Debian" class="h-12">
-      <img src="https://omniset.org/assets/ubuntu.svg" alt="Ubuntu" class="h-12">
+  <!-- Software Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Complete control over your software.</h2>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+            OmniSet empowers you to use professional-grade applications without subscription fees. Get alternatives to
+            Photoshop, Office, Premiere Pro, and more.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Need to share your work with others? Everything is compatible with standard file formats. Or use the same
+            cloud services you're already familiar with.
+          </p>
+        </div>
+        <div class="hidden md:block">
+          <!-- Could add an image here like HexOS does -->
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section class="py-20 px-6 bg-black text-white text-center">
-    <h2 class="text-3xl font-bold mb-6">Ready to simplify your Linux setup?</h2>
-    <a href="https://github.com/omnisetorg/Install"
-      class="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200">Run Omniset Now</a>
+  <!-- Features Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Linux is only the beginning.</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          OmniSet lets you do so much more.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold mb-4 text-gray-900">Hardware Agnostic</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Other systems mostly limit you to expensive hardware. OmniSet gives you the freedom to choose and change
+            hardware on your own.
+          </p>
+        </div>
+
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold mb-4 text-gray-900">Powerful & Flexible</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Quickly configure your system for anything you desire. Code, create content, play games, and more. Simply
+            install the apps of your choice and go.
+          </p>
+        </div>
+
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold mb-4 text-gray-900">Secure & Private</h3>
+          <p class="text-gray-600 leading-relaxed">
+            No viruses, no tracking, no bloatware. Enjoy the security and performance of Linux without the complexity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Started Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Get started in minutes, not hours.</h2>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+            Unlike other Linux setup scripts that require technical knowledge, OmniSet handles everything automatically.
+            Hardware detection, driver installation, and software configuration all happen seamlessly.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Your time is valuable. Stop spending it wrestling with configuration files and package dependencies. Let
+            OmniSet handle the technical details so you can focus on what matters to you.
+          </p>
+        </div>
+        <div class="hidden md:block">
+          <!-- Could add an image here like HexOS does -->
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-10 px-6 text-center text-sm text-gray-500">
-    <p>© 2025 Omniset. MIT Licensed. <a href="mailto:hello@omniset.org" class="underline">Contact Us</a> | <a href="https://github.com/omnisetorg" class="text-gray-600 hover:text-indigo-600">Github</a></p>
+  <footer class="py-8 border-t border-gray-200">
+    <div class="container mx-auto px-6">
+      <p class="text-center text-gray-500 text-sm">
+        &copy; 2025 OmniSet. Open source under MIT License. Built with ❤️ for the Linux community.
+      </p>
+    </div>
   </footer>
-  <script src="assets/script.js"></script>
+
+<script src="./assets/script.js" defer></script>
 </body>
 
 </html>

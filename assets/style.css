@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+/* Configure theme directly in CSS */
+@theme {
+  --font-family-inter: Inter, ui-sans-serif, system-ui, sans-serif;
+  
+  /* Custom colors */
+  --color-purple-custom: #6366f1;
+  --color-orange-custom: #ff6b35;
+  --color-pink-custom: #ec4899;
+  --color-yellow-custom: #f59e0b;
+  
+  /* Custom gradients */
+  --background-image-gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --background-image-gradient-ubuntu: linear-gradient(135deg, #E95420, #FF6B35);
+  --background-image-gradient-debian: linear-gradient(135deg, #A80030, #D70A53);
+  --background-image-gradient-mint: linear-gradient(135deg, #87CF3E, #4CAF50);
+  --background-image-gradient-pop: linear-gradient(135deg, #48B9C7, #00BCD4);
+  --background-image-gradient-elementary: linear-gradient(135deg, #5C5F77, #8B8FA3);
+  --background-image-gradient-zorin: linear-gradient(135deg, #15A6F0, #0078D4);
+  --background-image-gradient-kali: linear-gradient(135deg, #557C93, #2E3440);
+  --background-image-gradient-pi: linear-gradient(135deg, #C51A4A, #E91E63);
+}
+
+/* Custom component styles */
+@layer components {
+  .distros-slider {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .distros-slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hero-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
