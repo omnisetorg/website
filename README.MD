@@ -54,4 +54,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 - Documentation: [https://omniset.org](#)
 - Issues: [GitHub Issues](https://github.com/omnisetorg/omniset/issues)
-- Discord: [Join our community](https://discord.gg/nk5HAAgQQH)
