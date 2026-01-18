@@ -10,3 +10,17 @@ function copyToClipboard(element) {
     }, 2000);
   });
 }
+
+// Mobile menu toggle with ARIA support
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+});

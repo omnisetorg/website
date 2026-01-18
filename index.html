@@ -46,25 +46,83 @@
 </head>
 
 <body class="bg-white text-gray-900">
+  <!-- Skip to main content link for keyboard users -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded-lg">
+    Skip to main content
+  </a>
+
+  <!-- Navigation Header -->
+  <header role="banner" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+    <div class="container mx-auto px-6">
+      <nav role="navigation" aria-label="Main navigation" class="flex items-center justify-between h-16">
+        <a href="/" class="text-xl font-bold text-gray-900" aria-label="OmniSet - Home">OmniSet</a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="https://github.com/omnisetorg/install#readme" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors">Docs</a>
+          <a href="https://github.com/omnisetorg" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors">GitHub</a>
+          <a href="#get-started" class="px-5 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all hover:-translate-y-0.5">Get Started</a>
+        </div>
+        <button class="md:hidden p-2" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </nav>
+      <!-- Mobile menu -->
+      <div class="hidden md:hidden pb-4" id="mobile-menu" role="menu" aria-label="Mobile navigation">
+        <a href="https://github.com/omnisetorg/install#readme" target="_blank" rel="noopener noreferrer" role="menuitem" class="block py-2 text-gray-600 hover:text-gray-900">Docs</a>
+        <a href="https://github.com/omnisetorg" target="_blank" rel="noopener noreferrer" role="menuitem" class="block py-2 text-gray-600 hover:text-gray-900">GitHub</a>
+        <a href="#get-started" role="menuitem" class="block py-2 text-indigo-600 font-medium">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" role="main">
   <!-- Hero Section -->
-  <section class="relative bg-gradient-hero text-white py-16 md:py-24 overflow-hidden">
+  <section id="get-started" class="relative bg-gradient-hero text-white py-20 md:py-32 overflow-hidden">
     <div class="absolute inset-0 hero-pattern"></div>
     <div class="container mx-auto px-6 relative z-10">
-      <div class="text-center">
-        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">OmniSet</h1>
-        <p class="text-xl md:text-2xl font-medium mb-4 text-white/90">Switch to Linux Without the Hassle</p>
-        <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-white/80 leading-relaxed">
-          Transform any Linux distribution into a familiar environment that works like macOS or Windows. Perfect for
-          first-time Linux users who wants everything to just work.
-        </p>
-
-        <div class="mb-16">
-          <div
-            class="inline-block bg-white/95 text-gray-900 px-8 py-4 rounded-xl font-mono text-base md:text-lg shadow-xl cursor-pointer hover:bg-white hover:-translate-y-1 transition-all duration-300 border-2 border-transparent hover:shadow-2xl"
-            onclick="copyToClipboard(this)">
-            wget -qO- https://omniset.org/install | bash
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left: Text Content -->
+        <div class="text-left">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Switch to Linux<br>
+            <span class="text-white/90">Without the Hassle</span>
+          </h1>
+          <p class="text-lg md:text-xl mb-8 text-white/80 leading-relaxed max-w-lg">
+            Transform any Linux distribution into a familiar environment that works like macOS or Windows. Perfect for first-time users who want everything to just work.
+          </p>
+          <div class="mb-6">
+            <div
+              class="inline-block bg-white/95 text-gray-900 px-6 py-4 rounded-xl font-mono text-sm md:text-base shadow-xl cursor-pointer hover:bg-white hover:-translate-y-1 transition-all duration-300"
+              onclick="copyToClipboard(this)">
+              wget -qO- https://omniset.org/install | bash
+            </div>
+            <div class="text-sm text-white/60 mt-3">Click to copy command</div>
           </div>
-          <div class="text-sm text-white/70 mt-3">Click to copy command</div>
+        </div>
+        <!-- Right: Visual Element -->
+        <div class="hidden md:flex justify-center items-center">
+          <div class="relative">
+            <!-- Terminal Window Mockup -->
+            <div class="bg-gray-900 rounded-2xl shadow-2xl p-1 w-80 lg:w-96">
+              <div class="flex items-center gap-2 px-4 py-3 border-b border-gray-700">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <span class="ml-2 text-gray-400 text-sm">Terminal</span>
+              </div>
+              <div class="p-4 font-mono text-sm text-green-400 space-y-2">
+                <p><span class="text-gray-500">$</span> wget -qO- omniset.org/install | bash</p>
+                <p class="text-white">🚀 Welcome to OmniSet!</p>
+                <p class="text-gray-400">Detecting your system...</p>
+                <p class="text-gray-400">Found: Ubuntu 24.04</p>
+                <p class="text-white">✓ Installing your perfect setup...</p>
+              </div>
+            </div>
+            <!-- Decorative elements -->
+            <div class="absolute -top-4 -right-4 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+            <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-indigo-400/20 rounded-full blur-2xl"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -153,7 +211,7 @@
             class="flex-shrink-0 w-40 text-center p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
             <div
               class="w-16 h-16 mx-auto mb-4 bg-white rounded-2xl flex items-center justify-center p-3 border border-gray-100">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="#557C93">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="#557C93" aria-hidden="true">
                 <path d="M12 2L3 9l9 7 9-7-9-7z" />
                 <path d="M12 16l-6-5 6 5 6-5-6 5z" />
               </svg>
@@ -185,117 +243,194 @@
   </section>
 
   <!-- Simple Setup Section -->
-  <section class="py-16 bg-white">
+  <section class="py-20 bg-white">
     <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Designed for users with simplicity in mind.</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Until now, the biggest barrier to Linux has been the sheer complication of setting everything up correctly.
-          Unless you have IT experience, concepts like package managers, desktop environments, and configurations might
-          make your eyes glaze over.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-        <div class="text-center md:text-left">
-          <h3 class="text-2xl font-semibold mb-4 text-gray-900">One Click Installation</h3>
-          <p class="text-lg text-gray-600 leading-relaxed">
-            No technical expertise needed. Simply copy and paste one command, and OmniSet handles everything else.
-            Your perfect Linux environment will be ready while you grab a coffee.
-          </p>
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <!-- Left: Visual -->
+        <div class="hidden md:flex justify-center">
+          <div class="relative">
+            <!-- Setup wizard mockup -->
+            <div class="bg-gray-100 rounded-2xl p-6 w-72 lg:w-80 shadow-lg">
+              <div class="text-center mb-6">
+                <div class="w-16 h-16 mx-auto mb-4 bg-indigo-100 rounded-full flex items-center justify-center">
+                  <svg width="32" height="32" fill="none" stroke="#4F46E5" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <p class="font-semibold text-gray-900">How will you use your PC?</p>
+              </div>
+              <div class="space-y-3">
+                <div class="bg-white p-3 rounded-lg border-2 border-indigo-500 flex items-center gap-3">
+                  <div class="w-8 h-8 bg-indigo-100 rounded flex items-center justify-center text-sm">💻</div>
+                  <span class="text-gray-900 font-medium">Developer</span>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-gray-200 flex items-center gap-3">
+                  <div class="w-8 h-8 bg-gray-100 rounded flex items-center justify-center text-sm">🎮</div>
+                  <span class="text-gray-600">Gamer</span>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-gray-200 flex items-center gap-3">
+                  <div class="w-8 h-8 bg-gray-100 rounded flex items-center justify-center text-sm">🎨</div>
+                  <span class="text-gray-600">Creative</span>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-indigo-100 rounded-full blur-2xl -z-10"></div>
+          </div>
         </div>
-
-        <div class="text-center md:text-left">
-          <h3 class="text-2xl font-semibold mb-4 text-gray-900">Familiar Interface</h3>
-          <p class="text-lg text-gray-600 leading-relaxed">
-            Looks and feels like what you're used to. Software and workflows that make sense coming
-            from Mac or Windows.
+        <!-- Right: Text -->
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Designed for simplicity.</h2>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Until now, the biggest barrier to Linux has been the complication of setting everything up. Package managers, desktop environments, configurations — concepts that make most people's eyes glaze over.
           </p>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg width="24" height="24" fill="none" stroke="#4F46E5" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">One Command Setup</h3>
+                <p class="text-gray-600">Copy one command, answer a few questions, and your perfect environment is ready.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg width="24" height="24" fill="none" stroke="#4F46E5" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Familiar Interface</h3>
+                <p class="text-gray-600">Looks and feels like what you're used to from Mac or Windows.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Software Section -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-16 items-center">
+        <!-- Left: Text -->
         <div>
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Complete control over your software.</h2>
           <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-            OmniSet empowers you to use professional-grade applications without subscription fees. Get alternatives to
-            Photoshop, Office, Premiere Pro, and more.
+            OmniSet empowers you to use professional-grade applications without subscription fees. Get alternatives to Photoshop, Office, Premiere Pro, and more.
           </p>
-          <p class="text-lg text-gray-600 leading-relaxed">
-            Never worry about vendor lock-in again. With OmniSet, you own your tools and your data.
-            Switch between applications freely, customize everything to your workflow, and enjoy
-            professional software without the monthly fees.
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Never worry about vendor lock-in again. You own your tools and your data. Switch between applications freely and enjoy professional software without monthly fees.
           </p>
+          <a href="#get-started" class="inline-flex items-center gap-2 text-indigo-600 font-medium hover:text-indigo-700 transition-colors">
+            Get started free
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
-        <div class="hidden md:flex justify-center items-center">
-          <svg width="80" height="80" fill="#4F46E5" viewBox="0 0 24 24">
-            <!-- Main software window -->
-            <rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="#4F46E5" stroke-width="1.5" />
-            <rect x="2" y="4" width="20" height="4" rx="2" fill="#4F46E5" opacity="0.2" />
-
-            <!-- Window controls -->
-            <circle cx="5" cy="6" r="0.5" fill="#4F46E5" />
-            <circle cx="7" cy="6" r="0.5" fill="#4F46E5" />
-            <circle cx="9" cy="6" r="0.5" fill="#4F46E5" />
-
-            <!-- Application icons inside -->
-            <rect x="4" y="10" width="3" height="3" rx="0.5" fill="#4F46E5" opacity="0.6" />
-            <rect x="8" y="10" width="3" height="3" rx="0.5" fill="#4F46E5" opacity="0.6" />
-            <rect x="12" y="10" width="3" height="3" rx="0.5" fill="#4F46E5" opacity="0.6" />
-            <rect x="16" y="10" width="3" height="3" rx="0.5" fill="#4F46E5" opacity="0.6" />
-
-            <!-- Second row of apps -->
-            <rect x="4" y="14" width="3" height="3" rx="0.5" fill="#4F46E5" opacity="0.6" />
-            <rect x="8" y="14" width="3" height="3" rx="0.5" fill="#4F46E5" opacity="0.6" />
-            <rect x="12" y="14" width="3" height="3" rx="0.5" fill="#4F46E5" opacity="0.6" />
-            <rect x="16" y="14" width="3" height="3" rx="0.5" fill="#4F46E5" opacity="0.6" />
-
-            <!-- Crown/ownership symbol -->
-            <path d="M8 2l2 3 4-1-1 4 4 1-3 2v3H6V8l-3-2 4-1-1-4 4 1z" fill="#4F46E5" opacity="0.8"
-              transform="translate(4, -1) scale(0.6)" />
-          </svg>
+        <!-- Right: Visual - App Grid -->
+        <div class="hidden md:flex justify-center">
+          <div class="relative">
+            <div class="bg-white rounded-2xl p-6 shadow-lg">
+              <p class="text-sm text-gray-500 mb-4 font-medium">Your Apps</p>
+              <div class="grid grid-cols-4 gap-4">
+                <div class="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md">Gi</div>
+                <div class="w-14 h-14 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md">In</div>
+                <div class="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md">Bl</div>
+                <div class="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md">Li</div>
+                <div class="w-14 h-14 bg-gradient-to-br from-red-400 to-red-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md">Kd</div>
+                <div class="w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md">VS</div>
+                <div class="w-14 h-14 bg-gradient-to-br from-pink-400 to-pink-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md">Da</div>
+                <div class="w-14 h-14 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md">+</div>
+              </div>
+            </div>
+            <div class="absolute -top-4 -left-4 w-20 h-20 bg-indigo-100 rounded-full blur-2xl -z-10"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="py-16 bg-white">
+  <!-- Features Grid Section -->
+  <section class="py-20 bg-white">
     <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Linux is only the beginning.</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Linux is only the beginning.</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
           OmniSet lets you do so much more.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-        <div class="text-center md:text-left">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900">Escape the Apple Tax</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Love macOS but tired of overpaying for hardware? OmniSet gives you that same polished experience on any
-            computer you choose.
-          </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-colors">
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <svg width="24" height="24" fill="none" stroke="#4F46E5" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-gray-900">Secure & Private</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">No viruses, no tracking, no bloatware. Linux security without the complexity.</p>
         </div>
 
-        <div class="text-center md:text-left">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900">Powerful & Flexible</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Quickly configure your system for anything you desire. Code, create content, play games, and more. Simply
-            install the apps of your choice and go.
-          </p>
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-colors">
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <svg width="24" height="24" fill="none" stroke="#4F46E5" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-gray-900">Escape the Apple Tax</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Love macOS but tired of overpaying? Get that polished experience on any hardware.</p>
         </div>
 
-        <div class="text-center md:text-left">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900">Secure & Private</h3>
-          <p class="text-gray-600 leading-relaxed">
-            No viruses, no tracking, no bloatware. Enjoy the security and performance of Linux without the complexity.
-          </p>
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-colors">
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <svg width="24" height="24" fill="none" stroke="#4F46E5" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-gray-900">Powerful & Flexible</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Configure your system for anything. Code, create, game — install what you need and go.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-colors">
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <svg width="24" height="24" fill="none" stroke="#4F46E5" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-gray-900">Auto Updates</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Keep your system fresh with automatic updates that don't interrupt your work.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-colors">
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <svg width="24" height="24" fill="none" stroke="#4F46E5" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-gray-900">Community Driven</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Open source and built by the community. Inspect, modify, and contribute freely.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-colors">
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <svg width="24" height="24" fill="none" stroke="#4F46E5" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-gray-900">Hardware Agnostic</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Works on any PC — old or new, Intel or AMD. Breathe new life into old hardware.</p>
         </div>
       </div>
     </div>
@@ -306,7 +441,7 @@
     <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-16 items-center mb-16">
         <div class="order-2 md:order-1 flex justify-center">
-          <svg width="64" height="64" fill="#4F46E5" viewBox="0 0 24 24">
+          <svg width="64" height="64" fill="#4F46E5" viewBox="0 0 24 24" aria-hidden="true">
             <path
               d="M21.71 20.29l-1.42 1.42a1 1 0 01-1.41 0L17 19.83l-.88.88a1 1 0 01-1.41 0L13 18.83l-.88.88a1 1 0 01-1.41 0L9 17.83l-.88.88a1 1 0 01-1.41 0L5 16.83l-.88.88a1 1 0 01-1.41 0L1.29 16.29a1 1 0 010-1.41L2.17 14l-.88-.88a1 1 0 010-1.41L2.71 10.29a1 1 0 011.41 0L5 11.17l.88-.88a1 1 0 011.41 0L9 12.17l.88-.88a1 1 0 011.41 0L13 13.17l.88-.88a1 1 0 011.41 0L17 14.17l.88-.88a1 1 0 011.41 0l1.42 1.42a1 1 0 010 1.41L19.83 17l.88.88a1 1 0 010 1.41z" />
             <circle cx="12" cy="12" r="3" fill="#4F46E5" />
@@ -338,7 +473,7 @@
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="https://github.com/omnisetorg/install" target="_blank"
               class="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 hover:-translate-y-1">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" class="mr-2">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" class="mr-2" aria-hidden="true">
                 <path
                   d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
@@ -346,7 +481,7 @@
             </a>
             <a href="https://github.com/omnisetorg/website" target="_blank"
               class="inline-flex items-center px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-xl hover:bg-gray-900 hover:text-white transition-all duration-300 hover:-translate-y-1">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" class="mr-2">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" class="mr-2" aria-hidden="true">
                 <path
                   d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
@@ -355,7 +490,7 @@
           </div>
         </div>
         <div class="flex justify-center">
-          <svg width="64" height="64" fill="#4F46E5" viewBox="0 0 24 24">
+          <svg width="64" height="64" fill="#4F46E5" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="9" cy="7" r="4" fill="#4F46E5" />
             <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" fill="none" stroke="#4F46E5" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round" />
@@ -370,12 +505,83 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-8 border-t border-gray-200">
+  </main>
+
+  <!-- Newsletter Section -->
+  <section class="py-20 bg-gradient-hero text-white" aria-labelledby="newsletter-heading">
     <div class="container mx-auto px-6">
-      <p class="text-center text-gray-500 text-sm">
-        &copy; 2025 OmniSet. Open source under MIT License. Built with ❤️ for the Linux community.
-      </p>
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 id="newsletter-heading" class="text-3xl md:text-4xl font-bold mb-4">Stay in the loop</h2>
+        <p class="text-lg text-white/80 mb-8">
+          Get notified about new features, updates, and Linux tips. No spam, unsubscribe anytime.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onsubmit="return false;" aria-label="Newsletter signup">
+          <label for="newsletter-email" class="sr-only">Email address</label>
+          <input
+            type="email"
+            id="newsletter-email"
+            name="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+            required
+            aria-required="true"
+            class="flex-1 px-5 py-3 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
+          >
+          <button
+            type="submit"
+            class="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors"
+          >
+            Subscribe
+          </button>
+        </form>
+        <p class="text-sm text-white/60 mt-4">We respect your privacy. No spam, ever.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo" class="py-12 bg-gray-900 text-white">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <h3 class="text-xl font-bold mb-4">OmniSet</h3>
+          <p class="text-gray-400 mb-4 max-w-sm">
+            Making Linux accessible to everyone. One command to set up your perfect environment.
+          </p>
+          <div class="flex gap-4">
+            <a href="https://github.com/omnisetorg" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
+              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://twitter.com/omnisetorg" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter / X">
+              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Links -->
+        <div>
+          <h4 class="font-semibold mb-4">Resources</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="https://github.com/omnisetorg/install#readme" target="_blank" class="hover:text-white transition-colors">Documentation</a></li>
+            <li><a href="https://github.com/omnisetorg/install" target="_blank" class="hover:text-white transition-colors">Source Code</a></li>
+            <li><a href="https://github.com/omnisetorg/install/issues" target="_blank" class="hover:text-white transition-colors">Report Issues</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Community</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="https://github.com/omnisetorg/install/discussions" target="_blank" class="hover:text-white transition-colors">Discussions</a></li>
+            <li><a href="https://github.com/omnisetorg/install/blob/main/CONTRIBUTING.md" target="_blank" class="hover:text-white transition-colors">Contributing</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 OmniSet. Open source under MIT License.</p>
+      </div>
     </div>
   </footer>
 
