@@ -1,36 +1,58 @@
-# OmniSet
+# OmniSet Website
 
 <div align="center">
-  <img src="assets/logo.svg" width="120" alt="OmniSet Logo">
+  <img src="public/img/logo.svg" width="120" alt="OmniSet Logo">
   <h3>Your perfect Linux environment with one command</h3>
+  <p>Static website built with Astro + Tailwind CSS v4</p>
 </div>
 
-OmniSet is an automated setup script that configures your Linux environment based on your needs. Whether you're a developer, gamer, student, or content creator, OmniSet can quickly set up all the tools you need.
-
-## Quick Start
+## Quick Start (OmniSet Tool)
 
 ```bash
-wget -qO- https://omniset.org/install | bash
+curl -sL https://omniset.org/install | bash
 ```
 
-## Useful Commands
+## Website Development
 
-- Continuously watch for changes in the `style.css` file, updating the output file whenever changes occur.
+This is the source code for [omniset.org](https://omniset.org), built with [Astro](https://astro.build) for programmatic SEO.
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Commands
 
 ```bash
-npx @tailwindcss/cli -i ./assets/style.css -o ./assets/style.min.css --watch
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-* Generate a minified version of the CSS
+## Adding New Content
 
-```bash
-npx @tailwindcss/cli -i ./assets/style.css -o ./assets/style.min.css --minify 
+To add a new page in any section:
 
-```
+1. Create a JSON file in the appropriate `src/content/` folder
+2. Follow the schema defined in `src/content/config.ts`
+3. Run `npm run build` to generate the new page
+
+## Tech Stack
+
+- **Framework**: [Astro](https://astro.build) v5
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) v4
+- **Deployment**: GitHub Pages (static)
+- **SEO**: Auto-generated sitemap, JSON-LD structured data
 
 ## Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -38,19 +60,12 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## Security
-
-To inspect the script before running:
-
-```bash
-wget -O https://omniset.org/install
-```
-
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## Support
+## Links
 
-- Documentation: [https://omniset.org](#)
+- Website: [https://omniset.org](https://omniset.org)
+- OmniSet Install Repo: [github.com/omnisetorg/Install](https://github.com/omnisetorg/Install)
 - Issues: [GitHub Issues](https://github.com/omnisetorg/omniset/issues)

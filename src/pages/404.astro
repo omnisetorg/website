@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found | OmniSet"
+  description="The page you're looking for doesn't exist."
+>
+  <section class="py-32 bg-gradient-hero text-white min-h-[60vh] flex items-center">
+    <div class="container mx-auto px-6">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="text-8xl font-bold mb-6 opacity-50">404</div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Page Not Found</h1>
+        <p class="text-xl text-white/80 mb-8">
+          The page you're looking for doesn't exist or has been moved.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/" class="px-6 py-3 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            Go Home
+          </a>
+          <a href="/docs/" class="px-6 py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors">
+            Read Docs
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8">Maybe you were looking for:</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <a href="/distros/" class="p-4 rounded-xl border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all">
+            <div class="font-semibold text-gray-900">Distributions</div>
+            <div class="text-sm text-gray-500">Explore Linux distros</div>
+          </a>
+          <a href="/tools/" class="p-4 rounded-xl border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all">
+            <div class="font-semibold text-gray-900">Tools</div>
+            <div class="text-sm text-gray-500">Software & apps</div>
+          </a>
+          <a href="/guides/" class="p-4 rounded-xl border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all">
+            <div class="font-semibold text-gray-900">Guides</div>
+            <div class="text-sm text-gray-500">Step-by-step tutorials</div>
+          </a>
+          <a href="/setup/" class="p-4 rounded-xl border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all">
+            <div class="font-semibold text-gray-900">Setup Profiles</div>
+            <div class="text-sm text-gray-500">Pre-configured setups</div>
+          </a>
+          <a href="/compare/" class="p-4 rounded-xl border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all">
+            <div class="font-semibold text-gray-900">Comparisons</div>
+            <div class="text-sm text-gray-500">Side-by-side reviews</div>
+          </a>
+          <a href="/glossary/" class="p-4 rounded-xl border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all">
+            <div class="font-semibold text-gray-900">Glossary</div>
+            <div class="text-sm text-gray-500">Linux terminology</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
