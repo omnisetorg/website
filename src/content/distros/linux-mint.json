@@ -1,0 +1,30 @@
+{
+  "id": "linux-mint",
+  "name": "Linux Mint",
+  "slug": "linux-mint",
+  "tagline": "Beginner friendly",
+  "description": "The most user-friendly Linux distribution. Linux Mint makes the transition from Windows seamless and familiar.",
+  "longDescription": "Linux Mint is designed to make Linux accessible to everyone. Its Cinnamon desktop environment provides a familiar, Windows-like experience that makes the transition painless. Mint includes multimedia codecs and proprietary drivers out of the box, so everything just works. If you're coming from Windows and want the easiest possible Linux experience, Linux Mint is your best choice.",
+  "logo": "/img/os/linux-mint.svg",
+  "website": "https://linuxmint.com",
+  "gradient": "gradient-mint",
+  "features": [
+    "Windows-like interface",
+    "Multimedia codecs included",
+    "Software Manager for easy installs",
+    "Timeshift backup tool",
+    "Update Manager with safety ratings"
+  ],
+  "bestFor": [
+    "Windows switchers",
+    "Linux beginners",
+    "Desktop productivity",
+    "Older hardware"
+  ],
+  "downloadUrl": "https://linuxmint.com/download.php",
+  "seo": {
+    "title": "OmniSet for Linux Mint | Beginner-Friendly Setup",
+    "description": "Set up Linux Mint with OmniSet. The perfect combination - the easiest Linux distro with the easiest configuration tool. Great for Windows switchers.",
+    "keywords": ["linux mint setup", "linux mint configuration", "windows to linux", "beginner linux", "omniset mint"]
+  }
+}

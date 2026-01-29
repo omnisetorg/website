@@ -1,0 +1,22 @@
+{
+  "id": "fullstack",
+  "name": "Fullstack Dev",
+  "slug": "fullstack",
+  "emoji": "💻",
+  "tagline": "Everything you need, ready to go",
+  "description": "Complete development environment for building modern web applications. Includes Docker, databases, and all the tools a fullstack developer needs.",
+  "longDescription": "The Fullstack Developer profile provides a comprehensive development environment ready for building modern web applications from frontend to backend. This setup includes everything from code editors and browsers to containerization tools and database clients. Whether you're building APIs, microservices, or full web applications, this profile has you covered with industry-standard tools that work together seamlessly.",
+  "tools": ["essentials", "vscode", "chrome", "docker", "dev-language", "dev-storage"],
+  "useCases": [
+    "Building web applications",
+    "API development",
+    "Microservices architecture",
+    "DevOps workflows",
+    "Database management"
+  ],
+  "seo": {
+    "title": "Fullstack Developer Linux Setup | OmniSet",
+    "description": "Set up a complete fullstack development environment on Linux with OmniSet. Includes VS Code, Docker, Chrome, databases, and more. One command setup.",
+    "keywords": ["fullstack developer linux", "web development linux setup", "docker linux", "complete dev environment", "linux for web developers"]
+  }
+}

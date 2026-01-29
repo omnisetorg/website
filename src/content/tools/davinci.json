@@ -1,0 +1,28 @@
+{
+  "id": "davinci",
+  "name": "DaVinci Resolve",
+  "slug": "davinci",
+  "category": "Creative",
+  "icon": "film",
+  "description": "Professional video editing and color grading software. DaVinci Resolve is used by Hollywood professionals and it's free.",
+  "longDescription": "DaVinci Resolve is a professional video editing, color correction, visual effects, and audio post-production application. Used by Hollywood studios, it's available for free (with a paid Studio version for additional features). On Linux, it provides the same professional-grade tools used in major film productions. Whether you're editing YouTube videos or feature films, DaVinci Resolve has the power you need.",
+  "features": [
+    "Professional video editing",
+    "Industry-leading color grading",
+    "Fairlight audio post-production",
+    "Fusion visual effects",
+    "Free version with most features"
+  ],
+  "alternatives": ["Kdenlive", "Shotcut", "OpenShot"],
+  "website": "https://www.blackmagicdesign.com/products/davinciresolve",
+  "seo": {
+    "title": "Install DaVinci Resolve on Linux with OmniSet",
+    "description": "Install DaVinci Resolve on Linux with OmniSet. Professional video editing and color grading used by Hollywood - completely free.",
+    "keywords": ["davinci resolve linux", "video editing linux", "free video editor", "color grading linux", "professional video linux"]
+  },
+  "schema": {
+    "type": "SoftwareApplication",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Linux"
+  }
+}

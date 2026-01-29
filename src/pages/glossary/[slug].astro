@@ -1,0 +1,74 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { marked } from 'marked';
+
+export async function getStaticPaths() {
+  const glossary = await getCollection('glossary');
+  return glossary.map((item) => ({
+    params: { slug: item.data.slug },
+    props: { term: item.data }
+  }));
+}
+
+const { term } = Astro.props;
+---
+
+<BaseLayout
+  title={term.seo.title}
+  description={term.seo.description}
+  canonical={`https://omniset.org/glossary/${term.slug}/`}
+>
+  <section class="py-20 bg-gradient-hero text-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <a href="/glossary/" class="text-white/60 hover:text-white mb-4 inline-block">← Back to Glossary</a>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">{term.term}</h1>
+        <p class="text-xl text-white/80">{term.shortDefinition}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <!-- Full Definition -->
+        <div class="prose-content text-lg text-gray-600 leading-relaxed mb-12" set:html={marked.parse(term.longDefinition)} />
+
+        <!-- Category -->
+        <div class="mb-8">
+          <span class="text-sm px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full">{term.category}</span>
+        </div>
+
+        <!-- Examples -->
+        {term.examples && term.examples.length > 0 && (
+          <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Examples</h2>
+            <div class="space-y-3">
+              {term.examples.map((example: string) => (
+                <div class="bg-gray-900 text-green-400 px-4 py-3 rounded-lg font-mono text-sm">
+                  {example}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Related Terms -->
+        {term.relatedTerms && term.relatedTerms.length > 0 && (
+          <div class="p-6 bg-indigo-50 rounded-2xl">
+            <h2 class="font-semibold text-gray-900 mb-4">Related Terms</h2>
+            <div class="flex flex-wrap gap-2">
+              {term.relatedTerms.map((related: string) => (
+                <a href={`/glossary/${related}/`}
+                   class="px-4 py-2 bg-white rounded-lg text-indigo-600 hover:bg-indigo-100 transition-colors font-medium">
+                  {related}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

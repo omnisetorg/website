@@ -1,0 +1,28 @@
+{
+  "id": "chrome",
+  "name": "Google Chrome",
+  "slug": "chrome",
+  "category": "Productivity",
+  "icon": "globe",
+  "description": "The world's most popular web browser. Chrome offers speed, security, and seamless sync across all your devices.",
+  "longDescription": "Google Chrome is the most widely used web browser, known for its speed, security, and developer tools. On Linux, Chrome provides the same experience you know from other platforms, including sync across devices, extension support, and built-in PDF viewing. OmniSet installs Chrome from Google's official repository, ensuring you always have the latest secure version.",
+  "features": [
+    "Fast page loading",
+    "Sync across devices",
+    "Excellent developer tools",
+    "Vast extension library",
+    "Built-in password manager"
+  ],
+  "alternatives": ["Firefox", "Brave", "Chromium"],
+  "website": "https://www.google.com/chrome",
+  "seo": {
+    "title": "Install Chrome on Linux with OmniSet",
+    "description": "Install Google Chrome on Linux with OmniSet. Get the world's most popular browser set up with one command. Sync your bookmarks, passwords, and extensions.",
+    "keywords": ["chrome linux", "install google chrome ubuntu", "chrome browser linux", "linux web browser", "chrome debian"]
+  },
+  "schema": {
+    "type": "SoftwareApplication",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Linux"
+  }
+}

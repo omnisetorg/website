@@ -1,0 +1,57 @@
+{
+  "title": "Troubleshooting",
+  "slug": "troubleshooting",
+  "description": "Solutions to common problems and issues you might encounter with OmniSet.",
+  "category": "Support",
+  "order": 5,
+  "icon": "help",
+  "sections": [
+    {
+      "title": "Run the Doctor Command",
+      "content": "OmniSet includes a built-in diagnostic tool. Run it first to identify issues:",
+      "code": "./bin/omniset doctor",
+      "language": "bash"
+    },
+    {
+      "title": "Installation Fails",
+      "content": "If the installation script fails to run:\n\n1. **Check your internet connection** - OmniSet needs to download packages\n2. **Verify sudo access** - Run `sudo whoami` to test\n3. **Update package lists first:**",
+      "code": "sudo apt update && sudo apt upgrade -y",
+      "language": "bash"
+    },
+    {
+      "title": "Module Not Found",
+      "content": "If a module isn't recognized:\n\n1. **Check the module name** - Use `./bin/omniset list` to see all available modules\n2. **Check by category** - Use `./bin/omniset list --category development`\n3. **Get module info** - Use `./bin/omniset info <module-name>`"
+    },
+    {
+      "title": "Package Conflicts",
+      "content": "If you see errors about broken or conflicting packages:\n\n1. Fix broken packages:",
+      "code": "sudo apt --fix-broken install\nsudo dpkg --configure -a\nsudo apt autoremove",
+      "language": "bash"
+    },
+    {
+      "title": "Docker Permission Denied",
+      "content": "If you get permission errors running Docker:\n\n1. Add yourself to the docker group:\n2. Log out and back in (or reboot)",
+      "code": "sudo usermod -aG docker $USER",
+      "language": "bash"
+    },
+    {
+      "title": "Web Interface Won't Open",
+      "content": "If the browser-based selector doesn't open:\n\n1. **Check if a browser is installed** - OmniSet needs a default browser\n2. **Try the interactive CLI instead:**",
+      "code": "./bin/omniset install --interactive",
+      "language": "bash"
+    },
+    {
+      "title": "Unsupported Distribution",
+      "content": "If your distro isn't supported:\n\n**Supported:** Ubuntu 20.04+, Debian 11+, Fedora, Arch, openSUSE, Alpine\n\nFor other distributions, you can try:\n1. Check if your distro is Debian-based - it might work\n2. Open an issue on GitHub requesting support\n3. Contribute support for your distro"
+    },
+    {
+      "title": "Getting Help",
+      "content": "If you can't solve your issue:\n\n1. **Search existing issues** on GitHub\n2. **Open a new issue** with:\n   - Your distribution and version\n   - The exact error message\n   - Output from `./bin/omniset doctor`\n   - Steps to reproduce\n3. **Join discussions** for community help"
+    }
+  ],
+  "seo": {
+    "title": "OmniSet Troubleshooting | Fix Common Issues",
+    "description": "Solutions to common OmniSet problems. Fix installation errors, package conflicts, Docker permissions, and more.",
+    "keywords": ["omniset troubleshooting", "linux installation problems", "fix linux errors", "omniset help", "omniset doctor"]
+  }
+}

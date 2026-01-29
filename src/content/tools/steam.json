@@ -1,0 +1,28 @@
+{
+  "id": "steam",
+  "name": "Steam",
+  "slug": "steam",
+  "category": "Gaming",
+  "icon": "gamepad",
+  "description": "The world's largest gaming platform. Steam on Linux supports thousands of games natively and many more through Proton.",
+  "longDescription": "Steam is the largest PC gaming platform, and it works great on Linux. With Steam Play and Proton, you can play thousands of Windows games on Linux without any configuration. Native Linux games run perfectly, and the Steam client provides the same features you know - cloud saves, achievements, friends lists, and the Steam Workshop. Gaming on Linux has never been better.",
+  "features": [
+    "Thousands of native Linux games",
+    "Proton for Windows game compatibility",
+    "Cloud saves across devices",
+    "Steam Workshop for mods",
+    "Big Picture mode for TV gaming"
+  ],
+  "alternatives": ["Lutris", "Heroic Games Launcher", "GOG Galaxy"],
+  "website": "https://store.steampowered.com",
+  "seo": {
+    "title": "Install Steam on Linux with OmniSet",
+    "description": "Install Steam on Linux with OmniSet. Play thousands of games with Proton compatibility. Gaming on Linux made easy.",
+    "keywords": ["steam linux", "install steam ubuntu", "gaming linux", "proton games", "linux gaming steam"]
+  },
+  "schema": {
+    "type": "SoftwareApplication",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Linux"
+  }
+}

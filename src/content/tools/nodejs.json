@@ -1,0 +1,29 @@
+{
+  "id": "nodejs",
+  "name": "Node.js & npm",
+  "slug": "nodejs",
+  "category": "Development",
+  "icon": "code",
+  "description": "JavaScript runtime built on Chrome's V8 engine. Node.js enables server-side JavaScript and powers modern web development.",
+  "longDescription": "Node.js is a JavaScript runtime that allows you to run JavaScript outside of a web browser. It's the foundation of modern web development, powering everything from simple scripts to large-scale applications. With npm (Node Package Manager), you have access to over a million packages that can speed up your development. OmniSet installs Node.js via nvm, allowing you to easily switch between versions.",
+  "features": [
+    "JavaScript server-side runtime",
+    "npm package manager with 1M+ packages",
+    "Async, event-driven architecture",
+    "Perfect for APIs and microservices",
+    "Active community and ecosystem"
+  ],
+  "alternatives": ["Deno", "Bun"],
+  "installCommand": "nvm install --lts",
+  "website": "https://nodejs.org",
+  "seo": {
+    "title": "Install Node.js on Linux with OmniSet",
+    "description": "Install and configure Node.js on Linux with OmniSet. Get the latest LTS version with npm, nvm for version management, and everything you need for JavaScript development.",
+    "keywords": ["nodejs linux", "install node ubuntu", "npm linux", "javascript linux", "node version manager"]
+  },
+  "schema": {
+    "type": "SoftwareApplication",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Linux"
+  }
+}

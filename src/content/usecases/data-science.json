@@ -1,0 +1,45 @@
+{
+  "title": "Linux for Data Science",
+  "slug": "data-science",
+  "icon": "chart",
+  "description": "Why data scientists prefer Linux for machine learning, data analysis, and scientific computing workflows.",
+  "longDescription": "Linux is the dominant platform in data science and machine learning. Most ML frameworks are developed on Linux first, cloud computing runs on Linux, and the command-line tools essential for data pipelines work best on Linux. With native support for Python, R, Julia, and seamless Docker integration, Linux provides the ideal environment for data science work.",
+  "benefits": [
+    "Native Python environment with pip/conda",
+    "TensorFlow and PyTorch run best on Linux",
+    "Docker for reproducible environments",
+    "SSH access to remote servers and clusters",
+    "Jupyter notebooks work flawlessly",
+    "Better GPU support for ML training",
+    "Same environment as cloud/production"
+  ],
+  "recommendedTools": ["docker", "vscode", "nodejs"],
+  "recommendedDistros": ["ubuntu", "pop-os", "debian"],
+  "gettingStarted": [
+    {
+      "step": 1,
+      "title": "Choose Ubuntu LTS",
+      "description": "Ubuntu has the best compatibility with data science tools and NVIDIA CUDA drivers."
+    },
+    {
+      "step": 2,
+      "title": "Install NVIDIA Drivers & CUDA",
+      "description": "For GPU-accelerated machine learning, install the latest NVIDIA drivers and CUDA toolkit."
+    },
+    {
+      "step": 3,
+      "title": "Run OmniSet Data Scientist Profile",
+      "description": "This sets up Python, Docker, VS Code, and database tools you'll need."
+    },
+    {
+      "step": 4,
+      "title": "Set Up Conda/Virtual Environments",
+      "description": "Use conda or venv to manage project dependencies and avoid conflicts."
+    }
+  ],
+  "seo": {
+    "title": "Linux for Data Science | ML & Analytics Setup",
+    "description": "Set up Linux for data science and machine learning. Python, TensorFlow, PyTorch, Jupyter - complete guide for data scientists.",
+    "keywords": ["linux data science", "machine learning linux", "python data science", "tensorflow linux", "jupyter linux"]
+  }
+}

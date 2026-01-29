@@ -1,0 +1,168 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import JsonLd from '@components/seo/JsonLd.astro';
+
+export async function getStaticPaths() {
+  const tools = await getCollection('tools');
+  return tools.map((tool) => ({
+    params: { tool: tool.data.slug },
+    props: { tool: tool.data }
+  }));
+}
+
+const { tool } = Astro.props;
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": tool.schema.type,
+  "name": tool.name,
+  "description": tool.description,
+  "applicationCategory": tool.schema.applicationCategory,
+  "operatingSystem": tool.schema.operatingSystem,
+  "url": tool.website,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://omniset.org"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://omniset.org/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": tool.name,
+      "item": `https://omniset.org/tools/${tool.slug}/`
+    }
+  ]
+};
+
+const iconPaths: Record<string, string> = {
+  code: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+  globe: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+  box: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+  play: 'M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+  gamepad: 'M15 11h.01M12 11h.01M9 11h.01M7 21a4 4 0 01-4-4V7a4 4 0 014-4h10a4 4 0 014 4v10a4 4 0 01-4 4H7z',
+  chat: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
+  film: 'M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z'
+};
+---
+
+<BaseLayout
+  title={tool.seo.title}
+  description={tool.seo.description}
+  canonical={`https://omniset.org/tools/${tool.slug}/`}
+>
+  <Fragment slot="head">
+    <JsonLd schema={softwareSchema} />
+    <JsonLd schema={breadcrumbSchema} />
+    {tool.seo.keywords && <meta name="keywords" content={tool.seo.keywords.join(', ')} />}
+  </Fragment>
+
+  <section class="py-20 bg-gradient-hero text-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="w-20 h-20 mx-auto mb-6 bg-white/20 rounded-2xl flex items-center justify-center">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={iconPaths[tool.icon] || iconPaths.code}></path>
+          </svg>
+        </div>
+        <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-sm mb-4">{tool.category}</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{tool.name}</h1>
+        <p class="text-xl text-white/80 mb-8">{tool.description}</p>
+        <div
+          class="inline-block bg-white/95 text-gray-900 px-6 py-4 rounded-xl font-mono text-sm md:text-base shadow-xl cursor-pointer hover:bg-white hover:-translate-y-1 transition-all duration-300"
+          onclick="copyToClipboard(this)">
+          wget -qO- https://omniset.org/install | bash
+        </div>
+        <div class="text-sm text-white/60 mt-3">Click to copy command</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">About {tool.name}</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          {tool.longDescription}
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Key features</h3>
+        <ul class="space-y-3 mb-8">
+          {tool.features.map((feature: string) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-600">{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        {tool.installCommand && (
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Manual install command</h3>
+            <div class="bg-gray-900 text-green-400 p-4 rounded-xl font-mono text-sm overflow-x-auto">
+              <code>{tool.installCommand}</code>
+            </div>
+          </div>
+        )}
+
+        {tool.alternatives.length > 0 && (
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Alternatives</h3>
+            <div class="flex flex-wrap gap-2">
+              {tool.alternatives.map((alt: string) => (
+                <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm">
+                  {alt}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <a href={tool.website} target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-all hover:-translate-y-0.5">
+          Visit {tool.name} website
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Get {tool.name} with OmniSet</h2>
+        <p class="text-gray-600 mb-8">
+          OmniSet installs and configures {tool.name} automatically as part of your chosen profile.
+        </p>
+        <a href="/#get-started" class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-all hover:-translate-y-0.5">
+          Get started with OmniSet
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,30 @@
+{
+  "id": "kali",
+  "name": "Kali Linux",
+  "slug": "kali",
+  "tagline": "Security focused",
+  "description": "The penetration testing and security research distribution. Kali Linux comes with hundreds of security tools pre-installed.",
+  "longDescription": "Kali Linux is the industry-standard distribution for penetration testing, security research, and digital forensics. Maintained by Offensive Security, it includes hundreds of pre-installed security tools organized into categories like information gathering, vulnerability analysis, and exploitation. While not intended for everyday desktop use, it's essential for security professionals and anyone learning about cybersecurity.",
+  "logo": null,
+  "website": "https://kali.org",
+  "gradient": "gradient-kali",
+  "features": [
+    "600+ security tools included",
+    "Forensics mode",
+    "Custom kernel with injection patches",
+    "ARM device support",
+    "Regular tool updates"
+  ],
+  "bestFor": [
+    "Security professionals",
+    "Penetration testers",
+    "Security students",
+    "Forensic investigators"
+  ],
+  "downloadUrl": "https://www.kali.org/get-kali/",
+  "seo": {
+    "title": "OmniSet for Kali Linux | Security Tools Setup",
+    "description": "Extend Kali Linux with OmniSet. Add productivity tools and custom configurations to your security-focused Linux distribution.",
+    "keywords": ["kali linux setup", "security linux", "penetration testing", "cybersecurity linux", "omniset kali"]
+  }
+}

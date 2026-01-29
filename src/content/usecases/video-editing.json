@@ -1,0 +1,45 @@
+{
+  "title": "Linux for Video Editing",
+  "slug": "video-editing",
+  "icon": "film",
+  "description": "Professional video editing on Linux with free tools like DaVinci Resolve that rival expensive proprietary software.",
+  "longDescription": "Linux offers powerful video editing capabilities that can rival or exceed what's available on other platforms. DaVinci Resolve, used by Hollywood professionals, is available for free on Linux. Combined with other tools like Kdenlive, OBS for recording, and Audacity for audio, you have a complete content creation pipeline without expensive subscriptions.",
+  "benefits": [
+    "DaVinci Resolve - Hollywood-grade editing for free",
+    "No subscription fees for professional tools",
+    "OBS for streaming and screen recording",
+    "Kdenlive and Shotcut as additional editors",
+    "Better system stability for long editing sessions",
+    "Full control over your system resources",
+    "Blender for 3D and motion graphics"
+  ],
+  "recommendedTools": ["davinci", "vlc", "discord"],
+  "recommendedDistros": ["pop-os", "ubuntu", "linux-mint"],
+  "gettingStarted": [
+    {
+      "step": 1,
+      "title": "Check Hardware Requirements",
+      "description": "Video editing benefits from a good GPU (NVIDIA recommended for DaVinci), 16GB+ RAM, and fast SSD storage."
+    },
+    {
+      "step": 2,
+      "title": "Install a Stable Distribution",
+      "description": "Ubuntu LTS or Pop!_OS provide stability needed for production work. Avoid rolling release distros."
+    },
+    {
+      "step": 3,
+      "title": "Run OmniSet Content Creator Profile",
+      "description": "This installs DaVinci Resolve, VLC, and other media tools you'll need."
+    },
+    {
+      "step": 4,
+      "title": "Configure for Performance",
+      "description": "Ensure proprietary NVIDIA drivers are installed for GPU acceleration in DaVinci Resolve."
+    }
+  ],
+  "seo": {
+    "title": "Linux for Video Editing | DaVinci Resolve & Free Tools",
+    "description": "Professional video editing on Linux with free software. DaVinci Resolve, Kdenlive, OBS setup guide for content creators.",
+    "keywords": ["linux video editing", "davinci resolve linux", "free video editor", "content creation linux", "youtube linux"]
+  }
+}

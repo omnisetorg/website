@@ -1,0 +1,57 @@
+{
+  "title": "VS Code vs Vim",
+  "slug": "vscode-vs-vim",
+  "itemA": {
+    "name": "VS Code",
+    "pros": [
+      "Intuitive graphical interface",
+      "Massive extension marketplace",
+      "Built-in Git integration",
+      "IntelliSense code completion",
+      "Integrated debugging",
+      "Easy to learn and use",
+      "Great for any language"
+    ],
+    "cons": [
+      "Higher memory usage (~300MB+)",
+      "Slower startup than terminal editors",
+      "Requires mouse/trackpad usage",
+      "Electron-based (some consider bloated)"
+    ],
+    "bestFor": "Most developers, especially those new to coding or working on large projects with multiple languages"
+  },
+  "itemB": {
+    "name": "Vim/Neovim",
+    "pros": [
+      "Extremely fast and lightweight",
+      "Available on any system",
+      "Keyboard-only workflow (faster once learned)",
+      "Highly customizable",
+      "Works over SSH perfectly",
+      "Never leaves the terminal"
+    ],
+    "cons": [
+      "Steep learning curve",
+      "Requires significant configuration",
+      "Modal editing is unfamiliar",
+      "Plugin management can be complex"
+    ],
+    "bestFor": "Experienced developers who work heavily in the terminal, sysadmins, and those who value speed"
+  },
+  "verdict": "VS Code is the practical choice for most developers - it's powerful, extensible, and easy to use. Vim is worth learning if you spend a lot of time in terminals or editing remote files, but requires significant time investment. Many developers use both: VS Code for projects, Vim for quick edits.",
+  "comparisonTable": [
+    {"feature": "Learning Curve", "itemA": "Easy", "itemB": "Steep"},
+    {"feature": "Memory Usage", "itemA": "~300MB", "itemB": "~10MB"},
+    {"feature": "Startup Speed", "itemA": "Moderate", "itemB": "Instant"},
+    {"feature": "Extension Ecosystem", "itemA": "Excellent", "itemB": "Good"},
+    {"feature": "Remote Editing", "itemA": "Good (SSH ext)", "itemB": "Excellent"},
+    {"feature": "GUI Features", "itemA": "Full", "itemB": "None/Limited"},
+    {"feature": "Customization", "itemA": "Good", "itemB": "Unlimited"},
+    {"feature": "Built-in Features", "itemA": "Many", "itemB": "Minimal"}
+  ],
+  "seo": {
+    "title": "VS Code vs Vim: Which Editor Should You Use?",
+    "description": "Compare VS Code and Vim for development. Learning curve, features, performance. Which code editor is right for you?",
+    "keywords": ["vscode vs vim", "vim vs vscode", "best code editor linux", "neovim vs vscode", "linux text editor"]
+  }
+}

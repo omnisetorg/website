@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "question": "What is OmniSet?",
+      "answer": "OmniSet is an automated script that configures your Linux environment based on your needs and preferences. It streamlines the setup process by installing and configuring essential tools and applications for different use cases like development, gaming, content creation, and more."
+    },
+    {
+      "question": "Which Linux distributions are supported?",
+      "answer": "OmniSet is compatible with Debian-based Linux distributions including Ubuntu, Debian, Raspberry Pi OS, Linux Mint, Elementary OS, Pop!_OS, Zorin OS, and Kali Linux. Each distribution is thoroughly tested to ensure compatibility."
+    },
+    {
+      "question": "Is OmniSet customizable?",
+      "answer": "Yes! OmniSet offers extensive customization options. You can choose from predefined profiles (Developer, Gamer, Content Creator, etc.) or create a custom setup by selecting individual tools and applications. You can also modify configurations after installation."
+    },
+    {
+      "question": "How secure is OmniSet?",
+      "answer": "OmniSet prioritizes security. The script is completely open-source, allowing community review. It only installs packages from official repositories, verifies package signatures, and follows security best practices. You can inspect the entire script before running it on your system."
+    },
+    {
+      "question": "What are the system requirements?",
+      "answer": "Minimum requirements vary based on your chosen profile. For basic development setup: 4GB RAM, 40GB storage, and a modern CPU. For heavier workloads like gaming or content creation, we recommend 8GB RAM and 60GB+ storage. OmniSet works on both x86_64 and ARM architectures."
+    },
+    {
+      "question": "Can I undo the changes made by OmniSet?",
+      "answer": "Yes, OmniSet keeps a detailed log of all changes and installed packages. It includes an uninstall script that can revert the system to its previous state. You can also selectively remove individual components through your distribution's package manager."
+    },
+    {
+      "question": "Is OmniSet free to use?",
+      "answer": "Yes, OmniSet is completely free and open source under the MIT License. There are no subscriptions, no premium tiers, and no tracking. You can use it personally or commercially, modify it, and redistribute it."
+    },
+    {
+      "question": "How do I get started?",
+      "answer": "Simply open your terminal and run: wget -qO- https://omniset.org/install | bash. The interactive script will guide you through choosing a profile and customizing your installation. The entire process takes just a few minutes."
+    }
+  ]
+}

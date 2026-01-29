@@ -1,0 +1,19 @@
+{
+  "term": "sudo",
+  "slug": "sudo",
+  "shortDefinition": "Command that allows users to run programs with administrator (root) privileges.",
+  "longDefinition": "sudo (short for 'superuser do') is a command that allows permitted users to execute commands as the superuser (root) or another user. It's a security mechanism that lets you perform administrative tasks without logging in as root. When you run a command with sudo, you'll be asked for your password, and the system logs all sudo commands for security auditing.",
+  "category": "Security",
+  "relatedTerms": ["root", "permissions", "terminal"],
+  "examples": [
+    "sudo apt update - Update package lists (requires admin)",
+    "sudo reboot - Restart the system",
+    "sudo -i - Get a root shell",
+    "sudo chmod 755 file - Change file permissions"
+  ],
+  "seo": {
+    "title": "What is sudo in Linux? | Superuser Command Explained",
+    "description": "Learn what sudo means in Linux. How to use sudo for admin tasks, sudo vs root, and sudo best practices for security.",
+    "keywords": ["sudo linux", "what is sudo", "sudo command", "linux superuser", "sudo password"]
+  }
+}

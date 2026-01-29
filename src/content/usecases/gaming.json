@@ -1,0 +1,45 @@
+{
+  "title": "Linux for Gaming",
+  "slug": "gaming",
+  "icon": "gamepad",
+  "description": "Gaming on Linux has never been better. Learn how to play thousands of games with Steam, Proton, and native Linux titles.",
+  "longDescription": "Thanks to Valve's Proton technology and the growing number of native Linux games, gaming on Linux is now a viable option for most gamers. Steam Play allows you to run thousands of Windows games seamlessly, while native titles often perform better than on Windows. With the right setup, you can enjoy AAA games, indie titles, and retro gaming all on Linux.",
+  "benefits": [
+    "Steam with Proton plays most Windows games",
+    "No Windows license costs - more money for games",
+    "Better performance in many native titles",
+    "No forced updates interrupting your gaming",
+    "Excellent emulation support for retro gaming",
+    "Lower system overhead means more resources for games",
+    "Growing library of native Linux games"
+  ],
+  "recommendedTools": ["steam", "discord", "vlc"],
+  "recommendedDistros": ["pop-os", "ubuntu", "linux-mint"],
+  "gettingStarted": [
+    {
+      "step": 1,
+      "title": "Choose a Gaming-Friendly Distro",
+      "description": "Pop!_OS is excellent for gaming with NVIDIA GPUs. Ubuntu and Linux Mint are also great choices."
+    },
+    {
+      "step": 2,
+      "title": "Install Graphics Drivers",
+      "description": "NVIDIA users should install proprietary drivers. AMD users get great open-source driver support out of the box."
+    },
+    {
+      "step": 3,
+      "title": "Run OmniSet with Gamer Profile",
+      "description": "This installs Steam, Discord, and optimizes your system for gaming."
+    },
+    {
+      "step": 4,
+      "title": "Enable Steam Play",
+      "description": "In Steam settings, enable Steam Play for all titles to access Windows games via Proton."
+    }
+  ],
+  "seo": {
+    "title": "Linux for Gaming | Play Windows Games on Linux",
+    "description": "Complete guide to gaming on Linux. Steam Proton, native games, and setup tips. Play thousands of games without Windows.",
+    "keywords": ["linux gaming", "steam linux", "proton gaming", "play windows games linux", "gaming on ubuntu"]
+  }
+}

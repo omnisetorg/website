@@ -1,0 +1,59 @@
+{
+  "title": "Available Modules",
+  "slug": "modules",
+  "description": "Complete list of all 32+ modules available in OmniSet, organized by category.",
+  "category": "Introduction",
+  "order": 2,
+  "icon": "grid",
+  "sections": [
+    {
+      "title": "Module Categories",
+      "content": "OmniSet organizes modules into 16 categories:\n\n- **base** - Essential system tools\n- **cli** - Command-line utilities\n- **browsers** - Web browsers\n- **communication** - Chat and collaboration\n- **creative** - Design and media creation\n- **databases** - Database systems\n- **desktop** - Desktop applications\n- **development** - Programming languages & tools\n- **devops** - DevOps and infrastructure\n- **devtools** - Developer utilities\n- **editors** - Code and text editors\n- **gaming** - Gaming platforms\n- **media** - Media players\n- **productivity** - Office and productivity\n- **system** - System utilities\n- **terminals** - Terminal emulators"
+    },
+    {
+      "title": "Base & CLI Tools",
+      "content": "**essentials** - Core system utilities that every Linux user needs.\n\n**modern-cli** - Modern replacements for classic CLI tools:\n- **fzf** - Fuzzy finder\n- **ripgrep** - Fast grep alternative\n- **eza** - Modern ls replacement\n- **fd** - Fast find alternative\n- **bat** - Cat with syntax highlighting\n- **zoxide** - Smarter cd command"
+    },
+    {
+      "title": "Development",
+      "content": "Programming languages and development tools:\n\n- **docker** - Container platform\n- **nodejs** - JavaScript runtime with npm\n- **python** - Python with pip\n- **go** - Go programming language\n- **rust** - Rust with cargo\n- **php** - PHP runtime"
+    },
+    {
+      "title": "Databases",
+      "content": "All databases run via Docker for easy setup and isolation:\n\n- **PostgreSQL 16** - Advanced relational database\n- **MySQL 8.4** - Popular relational database\n- **Redis 7** - In-memory data store\n- **MongoDB 7** - Document database"
+    },
+    {
+      "title": "Editors & IDEs",
+      "content": "Code editors for every preference:\n\n- **vscode** - Visual Studio Code\n- Plus support for other editors in the editors category"
+    },
+    {
+      "title": "Browsers",
+      "content": "Web browsers:\n\n- **chrome** - Google Chrome\n- **firefox** - Mozilla Firefox\n- **brave** - Brave Browser"
+    },
+    {
+      "title": "Communication",
+      "content": "Stay connected with your team:\n\n- **discord** - Gaming & community chat\n- **slack** - Team collaboration\n- **zoom** - Video conferencing\n- **telegram** - Messaging app\n- **signal** - Secure messaging\n- **thunderbird** - Email client"
+    },
+    {
+      "title": "Creative",
+      "content": "Tools for designers and creators:\n\n- **gimp** - Image editor (Photoshop alternative)\n- **inkscape** - Vector graphics (Illustrator alternative)\n- **blender** - 3D modeling and animation\n- **obs** - Streaming and recording\n- **kdenlive** - Video editor\n- **audacity** - Audio editor"
+    },
+    {
+      "title": "Gaming & Media",
+      "content": "Entertainment software:\n\n- **steam** - Gaming platform with Proton\n- **lutris** - Game manager for Linux\n- **vlc** - Universal media player"
+    },
+    {
+      "title": "System",
+      "content": "System utilities:\n\n- **virtualbox** - Virtual machine manager"
+    },
+    {
+      "title": "Module Architecture",
+      "content": "Each module consists of:\n\n- **manifest.yaml** - Defines installation methods with priority levels\n- **install.sh** - Shell script for installation\n\nOmniSet prefers apt/deb packages for native system integration. Flatpak and Snap are used as fallbacks when native packages aren't available."
+    }
+  ],
+  "seo": {
+    "title": "OmniSet Modules | Complete Software List",
+    "description": "Browse all 32+ modules available in OmniSet. Development tools, creative software, databases, browsers, and more.",
+    "keywords": ["omniset modules", "linux software", "development tools linux", "creative software linux", "omniset packages"]
+  }
+}

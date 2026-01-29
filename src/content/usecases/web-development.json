@@ -1,0 +1,45 @@
+{
+  "title": "Linux for Web Development",
+  "slug": "web-development",
+  "icon": "code",
+  "description": "Why Linux is the preferred choice for web developers and how to set up your perfect development environment.",
+  "longDescription": "Linux has become the go-to operating system for web developers worldwide. With native support for all major programming languages, powerful command-line tools, and seamless integration with servers (which mostly run Linux), it provides an unmatched development experience. OmniSet makes it easy to set up a complete web development environment in minutes.",
+  "benefits": [
+    "Native terminal with bash/zsh - same as production servers",
+    "Package managers for easy tool installation",
+    "Docker runs natively without virtualization overhead",
+    "Free and open source - no licensing costs",
+    "Highly customizable to your workflow",
+    "Better performance for development tools",
+    "Direct access to system-level features"
+  ],
+  "recommendedTools": ["nodejs", "docker", "vscode", "chrome"],
+  "recommendedDistros": ["ubuntu", "pop-os", "debian"],
+  "gettingStarted": [
+    {
+      "step": 1,
+      "title": "Choose a Distribution",
+      "description": "Ubuntu or Pop!_OS are excellent choices for web development. They have great hardware support and large communities."
+    },
+    {
+      "step": 2,
+      "title": "Run OmniSet",
+      "description": "Use the Fullstack Dev profile or select individual modules like Node.js, Docker, and VS Code."
+    },
+    {
+      "step": 3,
+      "title": "Configure Your Editor",
+      "description": "Install VS Code extensions for your tech stack - ESLint, Prettier, GitLens, and language-specific tools."
+    },
+    {
+      "step": 4,
+      "title": "Set Up Version Control",
+      "description": "Configure Git with your credentials and SSH keys for GitHub/GitLab."
+    }
+  ],
+  "seo": {
+    "title": "Linux for Web Development | Complete Setup Guide",
+    "description": "Set up the perfect Linux web development environment. Node.js, Docker, VS Code, and more. Why developers choose Linux and how to get started.",
+    "keywords": ["linux web development", "web developer linux", "nodejs linux", "docker development", "linux programming"]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Getting Started",
+  "slug": "getting-started",
+  "description": "Learn how to install and run OmniSet on your Linux system in just a few minutes.",
+  "category": "Introduction",
+  "order": 1,
+  "icon": "rocket",
+  "sections": [
+    {
+      "title": "What is OmniSet?",
+      "content": "OmniSet is a modular Linux setup tool that streamlines environment configuration. Select the modules you need and install them with one command. It supports 32+ modules across 16 categories - from development tools to creative software."
+    },
+    {
+      "title": "Supported Platforms",
+      "content": "OmniSet works on the following distributions:\n\n- **Ubuntu** 20.04 and newer\n- **Debian** 11 and newer\n- **Fedora**\n- **Arch Linux**\n- **openSUSE**\n- **Alpine Linux**\n\n**Architectures:** Full amd64 support, partial arm64 and armhf compatibility."
+    },
+    {
+      "title": "Quick Install",
+      "content": "The fastest way to get started is with the browser-based installer. Open your terminal and run:",
+      "code": "curl -sL https://omniset.org/install | bash",
+      "language": "bash"
+    },
+    {
+      "title": "Alternative: Clone & Run",
+      "content": "If you prefer to inspect the code first, you can clone the repository and run locally:",
+      "code": "git clone https://github.com/omnisetorg/omniset.git\ncd omniset\n./bin/omniset install --web",
+      "language": "bash"
+    },
+    {
+      "title": "What Happens Next",
+      "content": "After running the install command:\n\n1. **Browser opens** with the module selector interface\n2. **Select modules** you want to install\n3. **Confirm** your selection\n4. **OmniSet installs** everything automatically\n\nThe installer prefers native apt/deb packages. Flatpak and Snap are used only as fallbacks when native packages aren't available."
+    },
+    {
+      "title": "Post-Installation",
+      "content": "After installation completes:\n\n1. **Restart your terminal** to load new shell configurations\n2. **Log out and back in** if you installed Docker (to apply group membership)\n3. **Reboot** if you installed graphics drivers or system-level tools"
+    }
+  ],
+  "seo": {
+    "title": "Getting Started with OmniSet | Installation Guide",
+    "description": "Learn how to install OmniSet on Ubuntu, Debian, Fedora, Arch, and more. Quick one-command setup for your Linux development environment.",
+    "keywords": ["omniset installation", "linux setup guide", "install omniset", "linux getting started", "ubuntu setup", "debian setup"]
+  }
+}

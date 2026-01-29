@@ -1,0 +1,51 @@
+{
+  "title": "CLI Reference",
+  "slug": "cli-reference",
+  "description": "Complete reference for OmniSet command-line interface commands and options.",
+  "category": "Configuration",
+  "order": 3,
+  "icon": "terminal",
+  "sections": [
+    {
+      "title": "Basic Usage",
+      "content": "OmniSet provides a powerful CLI for installing and managing modules. The basic syntax is:",
+      "code": "./bin/omniset <command> [options] [modules...]",
+      "language": "bash"
+    },
+    {
+      "title": "Install Command",
+      "content": "Install one or more modules by name:",
+      "code": "# Install specific modules\n./bin/omniset install docker nodejs vscode\n\n# Open web interface for selection\n./bin/omniset install --web\n\n# Interactive terminal selection\n./bin/omniset install --interactive",
+      "language": "bash"
+    },
+    {
+      "title": "List Command",
+      "content": "View available modules:",
+      "code": "# List all modules\n./bin/omniset list\n\n# List modules by category\n./bin/omniset list --category development\n./bin/omniset list --category creative\n./bin/omniset list --category databases",
+      "language": "bash"
+    },
+    {
+      "title": "Info Command",
+      "content": "Get detailed information about a specific module:",
+      "code": "# Show module details\n./bin/omniset info docker\n./bin/omniset info nodejs",
+      "language": "bash"
+    },
+    {
+      "title": "Doctor Command",
+      "content": "Run system verification to check compatibility and diagnose issues:",
+      "code": "./bin/omniset doctor",
+      "language": "bash"
+    },
+    {
+      "title": "Direct Installation",
+      "content": "You can also install modules directly without cloning the repository:",
+      "code": "# Install via curl with specific modules\ncurl -sL https://omniset.org/install | bash -s -- docker nodejs vscode",
+      "language": "bash"
+    }
+  ],
+  "seo": {
+    "title": "OmniSet CLI Reference | Command Line Guide",
+    "description": "Complete reference for OmniSet CLI commands. Learn how to install, list, and manage modules from the command line.",
+    "keywords": ["omniset cli", "omniset commands", "linux cli tool", "omniset terminal", "command line setup"]
+  }
+}

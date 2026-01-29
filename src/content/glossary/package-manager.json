@@ -1,0 +1,19 @@
+{
+  "term": "Package Manager",
+  "slug": "package-manager",
+  "shortDefinition": "Software tool that automates installing, updating, and removing programs.",
+  "longDefinition": "A package manager is a tool that automates the process of installing, upgrading, configuring, and removing software packages. It handles dependencies (other packages your software needs to work), connects to repositories to download software, and keeps track of what's installed on your system. Different Linux distributions use different package managers: APT for Debian/Ubuntu, DNF for Fedora, Pacman for Arch Linux.",
+  "category": "Package Management",
+  "relatedTerms": ["apt", "repository", "dpkg"],
+  "examples": [
+    "APT - Used by Debian, Ubuntu, Mint",
+    "DNF - Used by Fedora, RHEL",
+    "Pacman - Used by Arch Linux",
+    "Flatpak/Snap - Universal package formats"
+  ],
+  "seo": {
+    "title": "What is a Package Manager? | Linux Software Management",
+    "description": "Learn what a package manager is in Linux. APT, DNF, Pacman explained. How to install and manage software on Linux.",
+    "keywords": ["package manager linux", "what is package manager", "apt vs dnf", "linux software install", "package management"]
+  }
+}

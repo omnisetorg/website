@@ -1,0 +1,22 @@
+{
+  "id": "student",
+  "name": "Student",
+  "slug": "student",
+  "emoji": "📚",
+  "tagline": "Study smarter, not harder",
+  "description": "Essential tools for students - productivity apps, note-taking, and everything needed for academic success.",
+  "longDescription": "The Student profile provides everything you need for academic success on Linux. This balanced setup includes productivity tools, a modern web browser for research, media players for lectures and presentations, and communication apps. It's lightweight enough to run on older laptops while providing all the functionality students need for coursework, research, and collaboration.",
+  "tools": ["essentials", "chrome", "vscode", "thunderbird", "vlc"],
+  "useCases": [
+    "Research and writing papers",
+    "Online classes and video lectures",
+    "Note-taking and organization",
+    "Programming assignments",
+    "Email and collaboration"
+  ],
+  "seo": {
+    "title": "Student Linux Setup | OmniSet",
+    "description": "Set up the perfect Linux environment for students with OmniSet. Productivity tools, research browsers, and note-taking apps. Free and open source.",
+    "keywords": ["linux for students", "student laptop linux", "academic linux setup", "free software students", "linux for school"]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Uninstalling Modules",
+  "slug": "uninstall",
+  "description": "How to remove modules installed by OmniSet.",
+  "category": "Configuration",
+  "order": 4,
+  "icon": "trash",
+  "sections": [
+    {
+      "title": "Removing Individual Modules",
+      "content": "OmniSet installs software using your system's native package manager. To remove a module, use apt (or your distro's package manager):",
+      "code": "sudo apt remove <package-name>\nsudo apt autoremove",
+      "language": "bash"
+    },
+    {
+      "title": "Common Package Names",
+      "content": "Here are the package names for common modules:\n\n- **docker** → `docker.io` or `docker-ce`\n- **nodejs** → installed via nvm, remove `~/.nvm`\n- **vscode** → `code`\n- **chrome** → `google-chrome-stable`\n- **discord** → `discord`\n- **steam** → `steam`\n- **vlc** → `vlc`"
+    },
+    {
+      "title": "Removing Docker Containers",
+      "content": "If you installed databases via OmniSet (they run in Docker), stop and remove them:",
+      "code": "# List running containers\ndocker ps\n\n# Stop a container\ndocker stop <container-name>\n\n# Remove a container\ndocker rm <container-name>\n\n# Remove all stopped containers\ndocker container prune",
+      "language": "bash"
+    },
+    {
+      "title": "Removing Snap/Flatpak Apps",
+      "content": "If a module was installed via Snap or Flatpak (fallback method):",
+      "code": "# Remove Snap package\nsudo snap remove <package-name>\n\n# Remove Flatpak package\nflatpak uninstall <app-id>",
+      "language": "bash"
+    },
+    {
+      "title": "Cleaning Up",
+      "content": "After removing packages, clean up unused dependencies and cache:",
+      "code": "# Remove unused dependencies\nsudo apt autoremove\n\n# Clean package cache\nsudo apt clean",
+      "language": "bash"
+    },
+    {
+      "title": "Configuration Files",
+      "content": "Uninstalling packages doesn't remove configuration files in your home directory. To fully clean up:\n\n- **VS Code** → `~/.config/Code` and `~/.vscode`\n- **Chrome** → `~/.config/google-chrome`\n- **Docker** → `~/.docker`\n- **Node.js (nvm)** → `~/.nvm` and `~/.npm`\n\nRemove these directories manually if you want a complete cleanup."
+    }
+  ],
+  "seo": {
+    "title": "Uninstall OmniSet Modules | Removal Guide",
+    "description": "How to remove modules installed by OmniSet. Clean up packages, Docker containers, and configuration files.",
+    "keywords": ["uninstall omniset", "remove linux packages", "cleanup linux", "remove docker containers"]
+  }
+}

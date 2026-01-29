@@ -1,0 +1,76 @@
+{
+  "title": "Free Photoshop Alternatives for Linux",
+  "slug": "photoshop",
+  "proprietary": {
+    "name": "Adobe Photoshop",
+    "description": "The industry standard for photo editing and digital art, but expensive and not available on Linux.",
+    "price": "$20.99/month (Photography plan) or $54.99/month (All Apps)"
+  },
+  "alternatives": [
+    {
+      "name": "GIMP",
+      "description": "The most powerful free image editor. Supports layers, masks, filters, and advanced editing tools. Can open and export PSD files.",
+      "features": [
+        "Full layer support with masks",
+        "Extensive filter and effects library",
+        "Custom brushes and patterns",
+        "PSD file compatibility",
+        "Plugin and script support",
+        "RAW image editing"
+      ],
+      "website": "https://www.gimp.org",
+      "installCommand": "sudo apt install gimp",
+      "rating": 5
+    },
+    {
+      "name": "Krita",
+      "description": "Designed for digital painting and illustration. Excellent brush engine and drawing tools. Great for artists and concept designers.",
+      "features": [
+        "Professional brush engine",
+        "Drawing tablet support",
+        "Animation features",
+        "HDR support",
+        "Resource manager for brushes",
+        "PSD compatibility"
+      ],
+      "website": "https://krita.org",
+      "installCommand": "sudo apt install krita",
+      "rating": 5
+    },
+    {
+      "name": "Photopea",
+      "description": "Browser-based editor that looks and works like Photoshop. No installation required. Excellent PSD support.",
+      "features": [
+        "Photoshop-like interface",
+        "Works in any browser",
+        "Full PSD support",
+        "No installation needed",
+        "Free with ads (premium removes ads)",
+        "Cloud-based"
+      ],
+      "website": "https://www.photopea.com",
+      "rating": 4
+    },
+    {
+      "name": "Inkscape",
+      "description": "Vector graphics editor, similar to Adobe Illustrator. Best for logos, icons, and scalable graphics.",
+      "features": [
+        "SVG native format",
+        "Vector drawing tools",
+        "Path operations",
+        "Text on path",
+        "Extensions support",
+        "AI/EPS import"
+      ],
+      "website": "https://inkscape.org",
+      "installCommand": "sudo apt install inkscape",
+      "rating": 5
+    }
+  ],
+  "verdict": "GIMP is the most complete Photoshop replacement for photo editing. Krita is better for digital painting and illustration. For quick edits without installing software, Photopea works great in your browser.",
+  "seo": {
+    "title": "Free Photoshop Alternatives for Linux | GIMP, Krita & More",
+    "description": "Best free Photoshop alternatives for Linux. Compare GIMP, Krita, Photopea, and Inkscape. Professional image editing without subscriptions.",
+    "keywords": ["photoshop alternative linux", "free photo editor", "gimp vs photoshop", "linux image editor", "photoshop replacement"]
+  }
+}

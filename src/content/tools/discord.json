@@ -1,0 +1,28 @@
+{
+  "id": "discord",
+  "name": "Discord",
+  "slug": "discord",
+  "category": "Communication",
+  "icon": "chat",
+  "description": "Voice, video, and text communication platform. Discord connects you with gaming communities and friends.",
+  "longDescription": "Discord is the communication platform of choice for gamers and communities. It offers high-quality voice chat, video calls, screen sharing, and text channels all in one app. The Linux client provides the same features as other platforms, including push-to-talk, noise suppression, and integration with games. Whether you're coordinating with your team or hanging out with friends, Discord keeps you connected.",
+  "features": [
+    "High-quality voice chat",
+    "Video calls and screen sharing",
+    "Server communities with channels",
+    "Game activity status",
+    "Bot integrations"
+  ],
+  "alternatives": ["Element", "Mumble", "TeamSpeak"],
+  "website": "https://discord.com",
+  "seo": {
+    "title": "Install Discord on Linux with OmniSet",
+    "description": "Install Discord on Linux with OmniSet. Voice chat, video calls, and community features. Stay connected with your gaming friends.",
+    "keywords": ["discord linux", "install discord ubuntu", "voice chat linux", "discord debian", "gaming chat linux"]
+  },
+  "schema": {
+    "type": "SoftwareApplication",
+    "applicationCategory": "SocialNetworkingApplication",
+    "operatingSystem": "Linux"
+  }
+}

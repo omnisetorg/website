@@ -1,0 +1,59 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Hero from '@components/Hero.astro';
+import DistroSlider from '@components/DistroSlider.astro';
+import SimpleSetup from '@components/SimpleSetup.astro';
+import SoftwareSection from '@components/SoftwareSection.astro';
+import FeaturesGrid from '@components/FeaturesGrid.astro';
+import GettingStarted from '@components/GettingStarted.astro';
+import Newsletter from '@components/Newsletter.astro';
+import JsonLd from '@components/seo/JsonLd.astro';
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "OmniSet",
+  "url": "https://omniset.org",
+  "logo": "https://omniset.org/logo.svg",
+  "description": "Making Linux accessible to everyone with automated setup scripts.",
+  "sameAs": [
+    "https://github.com/omnisetorg",
+    "https://twitter.com/omnisetorg"
+  ]
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OmniSet",
+  "operatingSystem": "Linux",
+  "applicationCategory": "UtilitiesApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Automated Linux environment setup tool with pre-built profiles for developers, gamers, students, and creators."
+};
+---
+
+<BaseLayout
+  title="OmniSet - Switch to Linux Without the Hassle"
+  description="Transform any Linux distribution into a familiar environment that works like macOS or Windows. One command to set up your perfect Linux environment."
+>
+  <Fragment slot="head">
+    <JsonLd schema={organizationSchema} />
+    <JsonLd schema={softwareSchema} />
+  </Fragment>
+
+  <Hero />
+  <DistroSlider />
+  <SimpleSetup />
+  <SoftwareSection />
+  <FeaturesGrid />
+  <GettingStarted />
+
+  <Fragment slot="before-footer">
+    <Newsletter />
+  </Fragment>
+</BaseLayout>

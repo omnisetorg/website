@@ -1,0 +1,30 @@
+{
+  "id": "elementary",
+  "name": "Elementary OS",
+  "slug": "elementary",
+  "tagline": "Beautiful design",
+  "description": "The thoughtfully designed Linux distribution. Elementary OS combines macOS-like aesthetics with Linux power.",
+  "longDescription": "Elementary OS is a beautifully designed Linux distribution that proves open source software can be just as polished as proprietary alternatives. Inspired by macOS, it features a dock, global menu bar, and consistent visual design throughout. The curated AppCenter offers apps designed specifically for Elementary, ensuring a cohesive experience. If design matters to you, Elementary OS delivers.",
+  "logo": "/img/os/elementary.svg",
+  "website": "https://elementary.io",
+  "gradient": "gradient-elementary",
+  "features": [
+    "macOS-inspired design",
+    "Curated AppCenter",
+    "Privacy-focused",
+    "Consistent interface design",
+    "Parental controls built-in"
+  ],
+  "bestFor": [
+    "Design enthusiasts",
+    "macOS switchers",
+    "Users who value aesthetics",
+    "Families with children"
+  ],
+  "downloadUrl": "https://elementary.io/",
+  "seo": {
+    "title": "OmniSet for Elementary OS | Beautiful Linux Setup",
+    "description": "Set up Elementary OS with OmniSet. The most beautiful Linux distribution meets the easiest configuration tool. Perfect for design-conscious users.",
+    "keywords": ["elementary os setup", "beautiful linux", "macos alternative", "design linux", "omniset elementary"]
+  }
+}

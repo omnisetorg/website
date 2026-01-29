@@ -1,0 +1,30 @@
+{
+  "id": "pop-os",
+  "name": "Pop!_OS",
+  "slug": "pop-os",
+  "tagline": "Developer focused",
+  "description": "Built for creators and developers by System76. Pop!_OS offers excellent workflow tools and GPU support out of the box.",
+  "longDescription": "Pop!_OS is a Linux distribution developed by System76, a company that builds Linux computers. This gives them unique insights into hardware compatibility and user needs. Pop!_OS features a tiling window manager for improved productivity, excellent NVIDIA driver support, and a clean interface optimized for developers and creators. It's Ubuntu-based, so you get access to the vast Ubuntu software ecosystem.",
+  "logo": "/img/os/pop-os.svg",
+  "website": "https://pop.system76.com",
+  "gradient": "gradient-pop",
+  "features": [
+    "Auto-tiling window management",
+    "NVIDIA ISO with drivers included",
+    "Encrypted installation by default",
+    "Recovery partition",
+    "Pop!_Shop for easy software"
+  ],
+  "bestFor": [
+    "Developers",
+    "NVIDIA GPU users",
+    "Power users",
+    "Content creators"
+  ],
+  "downloadUrl": "https://pop.system76.com/",
+  "seo": {
+    "title": "OmniSet for Pop!_OS | Developer Setup",
+    "description": "Configure Pop!_OS with OmniSet. Perfect for developers and creators who want a powerful, productive Linux environment with NVIDIA support.",
+    "keywords": ["pop os setup", "pop os configuration", "developer linux", "nvidia linux", "omniset pop os"]
+  }
+}

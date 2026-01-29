@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const alternatives = await getCollection('alternatives');
+  return alternatives.map((alt) => ({
+    params: { slug: alt.data.slug },
+    props: { alternative: alt.data }
+  }));
+}
+
+const { alternative } = Astro.props;
+
+function getStars(rating: number): string {
+  return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+}
+---
+
+<BaseLayout
+  title={alternative.seo.title}
+  description={alternative.seo.description}
+  canonical={`https://omniset.org/alternatives/${alternative.slug}/`}
+>
+  <section class="py-20 bg-gradient-hero text-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Best {alternative.proprietary.name} Alternatives for Linux
+        </h1>
+        <p class="text-xl text-white/80">{alternative.proprietary.description}</p>
+        <p class="text-white/60 mt-4">Proprietary price: {alternative.proprietary.price}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8">
+          {alternative.alternatives.map((alt: {name: string, description: string, features: string[], website: string, installCommand?: string, rating: number}, index: number) => (
+            <div class="p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition-all">
+              <div class="flex items-start justify-between mb-4">
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 flex-wrap">
+                    <span class="text-sm font-bold text-indigo-600">#{index + 1}</span>
+                    <h2 class="text-2xl font-bold text-gray-900">{alt.name}</h2>
+                    <span class="text-yellow-500 text-sm">{getStars(alt.rating)}</span>
+                  </div>
+                  <p class="text-gray-600 mt-2">{alt.description}</p>
+                </div>
+              </div>
+
+              <div class="mt-6">
+                <h3 class="font-semibold text-gray-900 mb-3">Features</h3>
+                <ul class="grid md:grid-cols-2 gap-2">
+                  {alt.features.map((feature: string) => (
+                    <li class="flex items-start gap-2 text-sm text-gray-600">
+                      <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {alt.installCommand && (
+                <div class="mt-6">
+                  <h3 class="font-semibold text-gray-900 mb-2">Install</h3>
+                  <div class="bg-gray-900 text-green-400 px-4 py-3 rounded-lg font-mono text-sm">
+                    {alt.installCommand}
+                  </div>
+                </div>
+              )}
+
+              <div class="mt-6 pt-4 border-t border-gray-100">
+                <a href={alt.website} target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-medium">
+                  Visit Website
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Verdict -->
+        <div class="mt-12 p-6 bg-indigo-50 rounded-2xl">
+          <h2 class="text-xl font-bold text-gray-900 mb-4">Our Verdict</h2>
+          <p class="text-gray-700">{alternative.verdict}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

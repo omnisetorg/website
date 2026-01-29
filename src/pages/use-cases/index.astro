@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const usecases = await getCollection('usecases');
+
+const iconPaths: Record<string, string> = {
+  code: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+  gamepad: 'M15 11h.01M12 11h.01M9 11h.01M7 21h10a4 4 0 004-4V7a4 4 0 00-4-4H7a4 4 0 00-4 4v10a4 4 0 004 4z',
+  film: 'M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z',
+  chart: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'
+};
+---
+
+<BaseLayout
+  title="Linux Use Cases | OmniSet"
+  description="Discover how to use Linux for web development, gaming, video editing, data science, and more."
+>
+  <section class="py-20 bg-gradient-hero text-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Linux Use Cases</h1>
+        <p class="text-xl text-white/80">
+          Discover why Linux is the perfect choice for developers, gamers, creators, and more.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {usecases.map((usecase) => (
+          <a href={`/use-cases/${usecase.data.slug}/`}
+             class="p-8 rounded-2xl border border-gray-200 hover:border-indigo-300 hover:shadow-lg transition-all group">
+            <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-indigo-200 transition-colors">
+              <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={iconPaths[usecase.data.icon] || iconPaths.code}></path>
+              </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">{usecase.data.title}</h2>
+            <p class="text-gray-600 mt-3">{usecase.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

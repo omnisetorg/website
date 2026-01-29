@@ -1,0 +1,63 @@
+{
+  "title": "How to Install Docker on Ubuntu",
+  "slug": "install-docker-ubuntu",
+  "description": "Step-by-step guide to install Docker Engine and Docker Compose on Ubuntu Linux.",
+  "difficulty": "beginner",
+  "timeToComplete": "10 minutes",
+  "prerequisites": [
+    "Ubuntu 20.04 or newer",
+    "sudo/root access",
+    "Internet connection"
+  ],
+  "steps": [
+    {
+      "title": "Update Package Index",
+      "content": "First, update your existing list of packages:",
+      "code": "sudo apt update",
+      "language": "bash"
+    },
+    {
+      "title": "Install Prerequisites",
+      "content": "Install packages needed to use a repository over HTTPS:",
+      "code": "sudo apt install apt-transport-https ca-certificates curl gnupg lsb-release",
+      "language": "bash"
+    },
+    {
+      "title": "Add Docker's GPG Key",
+      "content": "Add the official Docker GPG key to verify packages:",
+      "code": "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg",
+      "language": "bash"
+    },
+    {
+      "title": "Add Docker Repository",
+      "content": "Set up the stable Docker repository:",
+      "code": "echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null",
+      "language": "bash"
+    },
+    {
+      "title": "Install Docker Engine",
+      "content": "Update apt and install Docker:",
+      "code": "sudo apt update\nsudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin",
+      "language": "bash"
+    },
+    {
+      "title": "Add User to Docker Group",
+      "content": "Run Docker without sudo by adding your user to the docker group:",
+      "code": "sudo usermod -aG docker $USER",
+      "language": "bash",
+      "warning": "You need to log out and back in for this to take effect."
+    },
+    {
+      "title": "Verify Installation",
+      "content": "Test that Docker is working correctly:",
+      "code": "docker run hello-world",
+      "language": "bash"
+    }
+  ],
+  "relatedGuides": ["setup-nodejs-linux", "docker-compose-basics"],
+  "seo": {
+    "title": "How to Install Docker on Ubuntu | Step-by-Step Guide",
+    "description": "Complete guide to installing Docker on Ubuntu. Docker Engine, Docker Compose, and running without sudo. Beginner-friendly steps.",
+    "keywords": ["install docker ubuntu", "docker ubuntu", "docker linux", "docker compose ubuntu", "docker setup"]
+  }
+}

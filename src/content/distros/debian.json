@@ -1,0 +1,30 @@
+{
+  "id": "debian",
+  "name": "Debian",
+  "slug": "debian",
+  "tagline": "Rock solid",
+  "description": "The universal operating system. Debian is known for its stability, security, and the foundation it provides for other distributions.",
+  "longDescription": "Debian is the bedrock of the Linux ecosystem. As the base for Ubuntu, Linux Mint, and countless other distributions, Debian emphasizes stability above all else. Its packages are thoroughly tested before release, making it ideal for servers and production environments. While it may not always have the latest software, you can trust Debian to be reliable day after day.",
+  "logo": "/img/os/debian.svg",
+  "website": "https://debian.org",
+  "gradient": "gradient-debian",
+  "features": [
+    "Extreme stability",
+    "Thorough security updates",
+    "Massive package repository",
+    "Multiple architecture support",
+    "Community-driven development"
+  ],
+  "bestFor": [
+    "Servers",
+    "Production environments",
+    "Users who value stability",
+    "Advanced users"
+  ],
+  "downloadUrl": "https://debian.org/download",
+  "seo": {
+    "title": "OmniSet for Debian | Stable Linux Configuration",
+    "description": "Configure Debian Linux with OmniSet. Transform your stable Debian installation into a productive environment with one simple command.",
+    "keywords": ["debian setup", "debian configuration", "debian linux", "stable linux", "omniset debian"]
+  }
+}

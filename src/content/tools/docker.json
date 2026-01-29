@@ -1,0 +1,29 @@
+{
+  "id": "docker",
+  "name": "Docker",
+  "slug": "docker",
+  "category": "Development",
+  "icon": "box",
+  "description": "Container platform for building, shipping, and running applications. Docker makes deployment consistent and reproducible.",
+  "longDescription": "Docker is the standard platform for containerization, allowing you to package applications with all their dependencies into portable containers. This ensures your application runs the same way everywhere - from your laptop to production servers. OmniSet installs Docker Engine, Docker Compose, and configures your user to run Docker commands without sudo.",
+  "features": [
+    "Application containerization",
+    "Docker Compose for multi-container apps",
+    "Consistent development environments",
+    "Massive image library on Docker Hub",
+    "Resource isolation and security"
+  ],
+  "alternatives": ["Podman", "containerd", "LXC"],
+  "installCommand": "apt install docker.io docker-compose",
+  "website": "https://www.docker.com",
+  "seo": {
+    "title": "Install Docker on Linux with OmniSet",
+    "description": "Install Docker on Linux with OmniSet. Get Docker Engine and Docker Compose configured and ready. Containerize your applications with one command.",
+    "keywords": ["docker linux", "install docker ubuntu", "docker compose linux", "containers linux", "docker setup"]
+  },
+  "schema": {
+    "type": "SoftwareApplication",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Linux"
+  }
+}

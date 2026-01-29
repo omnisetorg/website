@@ -1,0 +1,56 @@
+{
+  "title": "How to Set Up Node.js on Linux",
+  "slug": "setup-nodejs-linux",
+  "description": "Install Node.js on Linux using NVM for easy version management. The recommended way to use Node.js.",
+  "difficulty": "beginner",
+  "timeToComplete": "5 minutes",
+  "prerequisites": [
+    "Any Debian-based Linux distribution",
+    "Terminal access",
+    "curl or wget installed"
+  ],
+  "steps": [
+    {
+      "title": "Install NVM (Node Version Manager)",
+      "content": "NVM lets you install and switch between multiple Node.js versions. Install it with:",
+      "code": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash",
+      "language": "bash"
+    },
+    {
+      "title": "Reload Shell Configuration",
+      "content": "Apply the changes to your current terminal:",
+      "code": "source ~/.bashrc",
+      "language": "bash"
+    },
+    {
+      "title": "Verify NVM Installation",
+      "content": "Check that NVM is installed correctly:",
+      "code": "nvm --version",
+      "language": "bash"
+    },
+    {
+      "title": "Install Node.js LTS",
+      "content": "Install the latest Long Term Support version of Node.js:",
+      "code": "nvm install --lts",
+      "language": "bash"
+    },
+    {
+      "title": "Verify Node.js Installation",
+      "content": "Check that Node.js and npm are working:",
+      "code": "node --version\nnpm --version",
+      "language": "bash"
+    },
+    {
+      "title": "Set Default Node Version",
+      "content": "Make this version the default for new terminals:",
+      "code": "nvm alias default node",
+      "language": "bash"
+    }
+  ],
+  "relatedGuides": ["install-docker-ubuntu"],
+  "seo": {
+    "title": "How to Install Node.js on Linux with NVM",
+    "description": "Install Node.js on Linux the right way using NVM. Easy version management, LTS installation, and npm setup guide.",
+    "keywords": ["install nodejs linux", "nvm linux", "node version manager", "nodejs ubuntu", "npm linux"]
+  }
+}

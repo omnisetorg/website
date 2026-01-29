@@ -1,0 +1,21 @@
+{
+  "id": "minimalist",
+  "name": "Minimalist Dev",
+  "slug": "minimalist",
+  "emoji": "🔧",
+  "tagline": "Clean, focused, essential",
+  "description": "A stripped-down development environment with only the essentials. Perfect for developers who prefer a distraction-free setup.",
+  "longDescription": "The Minimalist profile is designed for developers who value simplicity and efficiency. This lean setup includes only the essential tools you need to write code, without any bloat or unnecessary features. It's perfect for experienced developers who know exactly what they need, or newcomers who want to start with a clean slate and add tools as needed. The minimal footprint means faster boot times, lower memory usage, and a focused work environment.",
+  "tools": ["essentials", "vscode", "dev-language"],
+  "useCases": [
+    "Backend development with focus",
+    "Quick prototyping and scripting",
+    "Low-resource machines",
+    "Learning programming fundamentals"
+  ],
+  "seo": {
+    "title": "Minimalist Developer Setup for Linux | OmniSet",
+    "description": "Set up a clean, minimalist Linux development environment with OmniSet. Essential tools only - VS Code, terminal, and your language of choice. Perfect for focused coding.",
+    "keywords": ["minimalist linux setup", "clean development environment", "essential dev tools", "linux for developers", "lightweight linux setup"]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "designer",
+  "name": "Designer",
+  "slug": "designer",
+  "emoji": "🎨",
+  "tagline": "Design without boundaries",
+  "description": "Creative tools for UI/UX designers, graphic artists, and visual creators. Professional design workflow on Linux.",
+  "longDescription": "The Designer profile equips your Linux machine with professional-grade creative tools. This setup includes everything from color-accurate displays to vector graphics, video editing, and prototyping capabilities. Whether you're designing user interfaces, creating graphics, or editing video content, this profile provides powerful alternatives to expensive proprietary software while integrating seamlessly with industry-standard workflows.",
+  "tools": ["essentials", "chrome", "vscode", "davinci-resolve", "discord"],
+  "useCases": [
+    "UI/UX design workflows",
+    "Graphic design projects",
+    "Video editing and motion graphics",
+    "Web design and prototyping",
+    "Digital illustration"
+  ],
+  "seo": {
+    "title": "Designer Linux Setup | OmniSet",
+    "description": "Set up a professional design environment on Linux with OmniSet. Video editing, graphics tools, and creative software. Free alternatives to Adobe.",
+    "keywords": ["linux for designers", "design software linux", "graphic design linux", "ui ux linux", "creative linux setup"]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "vlc",
+  "name": "VLC Media Player",
+  "slug": "vlc",
+  "category": "Multimedia",
+  "icon": "play",
+  "description": "The universal media player. VLC plays virtually any audio or video format without needing additional codecs.",
+  "longDescription": "VLC is the Swiss Army knife of media players. It plays almost every audio and video format imaginable, streams from the internet, and converts between formats. It's completely free, open source, and doesn't spy on your viewing habits. Whether you're watching movies, listening to music, or streaming network media, VLC handles it all without requiring codec packs or subscriptions.",
+  "features": [
+    "Plays almost any media format",
+    "No codec packs needed",
+    "Streaming support",
+    "Media conversion",
+    "Completely ad-free"
+  ],
+  "alternatives": ["mpv", "SMPlayer", "Celluloid"],
+  "installCommand": "apt install vlc",
+  "website": "https://www.videolan.org/vlc",
+  "seo": {
+    "title": "Install VLC on Linux with OmniSet",
+    "description": "Install VLC Media Player on Linux with OmniSet. Play any video or audio format. No codecs needed, no ads, no tracking.",
+    "keywords": ["vlc linux", "install vlc ubuntu", "media player linux", "video player linux", "vlc debian"]
+  },
+  "schema": {
+    "type": "SoftwareApplication",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Linux"
+  }
+}

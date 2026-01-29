@@ -1,0 +1,18 @@
+{
+  "term": "Distribution (Distro)",
+  "slug": "distro",
+  "shortDefinition": "A complete Linux operating system package including the kernel, software, and tools.",
+  "longDefinition": "A Linux distribution (often shortened to 'distro') is an operating system made from the Linux kernel along with other software packages, a package management system, and usually a desktop environment. Popular distributions include Ubuntu, Fedora, Debian, and Arch Linux. Each distribution has its own philosophy, target audience, and default software selection, but they all share the Linux kernel at their core.",
+  "category": "Basics",
+  "relatedTerms": ["kernel", "ubuntu", "debian"],
+  "examples": [
+    "Ubuntu is a user-friendly distribution based on Debian",
+    "Arch Linux is a distribution for advanced users",
+    "Linux Mint is a distribution focused on ease of use"
+  ],
+  "seo": {
+    "title": "What is a Linux Distribution? | Distro Explained",
+    "description": "Learn what a Linux distribution (distro) is. Understanding different Linux distros like Ubuntu, Debian, Fedora, and how to choose one.",
+    "keywords": ["linux distribution", "what is distro", "linux distro explained", "types of linux", "best linux distro"]
+  }
+}

@@ -1,0 +1,68 @@
+---
+// Hero section with terminal mockup
+interface Props {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  showTerminal?: boolean;
+}
+
+const {
+  title = 'Switch to Linux',
+  subtitle = 'Without the Hassle',
+  description = 'Transform any Linux distribution into a familiar environment that works like macOS or Windows. Perfect for first-time users who want everything to just work.',
+  showTerminal = true
+} = Astro.props;
+---
+
+<section id="get-started" class="relative bg-gradient-hero text-white py-20 md:py-32 overflow-hidden">
+  <div class="absolute inset-0 hero-pattern"></div>
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Left: Text Content -->
+      <div class="text-left">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          {title}<br>
+          <span class="text-white/90">{subtitle}</span>
+        </h1>
+        <p class="text-lg md:text-xl mb-8 text-white/80 leading-relaxed max-w-lg">
+          {description}
+        </p>
+        <div class="mb-6">
+          <div
+            class="inline-block bg-white/95 text-gray-900 px-6 py-4 rounded-xl font-mono text-sm md:text-base shadow-xl cursor-pointer hover:bg-white hover:-translate-y-1 transition-all duration-300"
+            onclick="copyToClipboard(this)">
+            wget -qO- https://omniset.org/install | bash
+          </div>
+          <div class="text-sm text-white/60 mt-3">Click to copy command</div>
+        </div>
+      </div>
+      <!-- Right: Visual Element -->
+      {showTerminal && (
+        <div class="hidden md:flex justify-center items-center">
+          <div class="relative">
+            <!-- Terminal Window Mockup -->
+            <div class="bg-gray-900 rounded-2xl shadow-2xl p-1 w-80 lg:w-96">
+              <div class="flex items-center gap-2 px-4 py-3 border-b border-gray-700">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <span class="ml-2 text-gray-400 text-sm">Terminal</span>
+              </div>
+              <div class="p-4 font-mono text-sm text-green-400 space-y-2">
+                <p><span class="text-gray-500">$</span> wget -qO- omniset.org/install | bash</p>
+                <p class="text-white">🚀 Welcome to OmniSet!</p>
+                <p class="text-gray-400">Detecting your system...</p>
+                <p class="text-gray-400">Found: Ubuntu 24.04</p>
+                <p class="text-white">✓ Installing your perfect setup...</p>
+              </div>
+            </div>
+            <!-- Decorative elements -->
+            <div class="absolute -top-4 -right-4 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+            <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-indigo-400/20 rounded-full blur-2xl"></div>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>

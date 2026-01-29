@@ -1,0 +1,53 @@
+{
+  "title": "How to Set Up Gaming on Linux",
+  "slug": "gaming-linux-setup",
+  "description": "Complete guide to gaming on Linux. Install Steam, enable Proton, and play Windows games.",
+  "difficulty": "beginner",
+  "timeToComplete": "20 minutes",
+  "prerequisites": [
+    "Ubuntu, Pop!_OS, or Linux Mint recommended",
+    "Dedicated GPU (NVIDIA or AMD)",
+    "At least 8GB RAM",
+    "Internet connection for game downloads"
+  ],
+  "steps": [
+    {
+      "title": "Install Graphics Drivers",
+      "content": "For NVIDIA GPUs, install proprietary drivers. For AMD, the open-source drivers work great out of the box.",
+      "code": "# For NVIDIA (Ubuntu/Pop!_OS)\nsudo ubuntu-drivers autoinstall\n\n# Then reboot\nsudo reboot",
+      "language": "bash"
+    },
+    {
+      "title": "Install Steam",
+      "content": "Install Steam from your distribution's repository or download from steam website:",
+      "code": "sudo apt install steam",
+      "language": "bash"
+    },
+    {
+      "title": "Enable Steam Play (Proton)",
+      "content": "In Steam, go to **Settings → Compatibility** and check:\n\n- Enable Steam Play for supported titles\n- Enable Steam Play for all other titles\n\nSelect the latest Proton version from the dropdown."
+    },
+    {
+      "title": "Install Gamemode (Optional)",
+      "content": "Gamemode optimizes your system while gaming:",
+      "code": "sudo apt install gamemode",
+      "language": "bash"
+    },
+    {
+      "title": "Install MangoHud (Optional)",
+      "content": "MangoHud provides an in-game overlay showing FPS, CPU/GPU stats:",
+      "code": "sudo apt install mangohud",
+      "language": "bash"
+    },
+    {
+      "title": "Test a Game",
+      "content": "Try installing a Windows game from your Steam library. Check ProtonDB (protondb.com) to see compatibility ratings and any tweaks needed for specific games."
+    }
+  ],
+  "relatedGuides": [],
+  "seo": {
+    "title": "Gaming on Linux Setup Guide | Steam & Proton",
+    "description": "Set up Linux for gaming. Install Steam, enable Proton, configure drivers. Play Windows games on Linux with this complete guide.",
+    "keywords": ["gaming linux", "steam linux", "proton setup", "linux gaming guide", "play windows games linux"]
+  }
+}

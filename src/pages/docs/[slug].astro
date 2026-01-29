@@ -1,0 +1,173 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import JsonLd from '@components/seo/JsonLd.astro';
+import { marked } from 'marked';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  return docs.map((doc) => ({
+    params: { slug: doc.data.slug },
+    props: { doc: doc.data }
+  }));
+}
+
+const { doc } = Astro.props;
+
+// Parse markdown content for each section
+const parsedSections = doc.sections.map(section => ({
+  ...section,
+  contentHtml: marked.parse(section.content)
+}));
+
+// Get all docs for sidebar navigation
+const allDocs = await getCollection('docs');
+const docs = allDocs.sort((a, b) => a.data.order - b.data.order);
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://omniset.org"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Documentation",
+      "item": "https://omniset.org/docs/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": doc.title,
+      "item": `https://omniset.org/docs/${doc.slug}/`
+    }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": doc.title,
+  "description": doc.description,
+  "author": {
+    "@type": "Organization",
+    "name": "OmniSet"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OmniSet"
+  }
+};
+---
+
+<BaseLayout
+  title={doc.seo.title}
+  description={doc.seo.description}
+  canonical={`https://omniset.org/docs/${doc.slug}/`}
+>
+  <Fragment slot="head">
+    <JsonLd schema={breadcrumbSchema} />
+    <JsonLd schema={articleSchema} />
+    {doc.seo.keywords && <meta name="keywords" content={doc.seo.keywords.join(', ')} />}
+  </Fragment>
+
+  <section class="py-12 bg-gradient-hero text-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <a href="/docs/" class="inline-flex items-center gap-2 text-white/70 hover:text-white mb-4 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Back to Documentation
+        </a>
+        <h1 class="text-3xl md:text-4xl font-bold">{doc.title}</h1>
+        <p class="text-lg text-white/80 mt-4">{doc.description}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid lg:grid-cols-4 gap-12">
+          <!-- Main Content -->
+          <div class="lg:col-span-3">
+            <div class="prose prose-lg max-w-none">
+              {parsedSections.map((section) => (
+                <div class="mb-10" id={section.title.toLowerCase().replace(/\s+/g, '-')}>
+                  <h2 class="text-2xl font-bold text-gray-900 mb-4">{section.title}</h2>
+                  <div class="text-gray-600 leading-relaxed prose-content" set:html={section.contentHtml} />
+                  {section.code && (
+                    <div class="mt-4 bg-gray-900 rounded-xl overflow-hidden">
+                      <div class="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
+                        <span class="text-gray-400 text-sm">{section.language || 'code'}</span>
+                        <button
+                          class="text-gray-400 hover:text-white text-sm transition-colors"
+                          onclick={`navigator.clipboard.writeText(\`${section.code.replace(/`/g, '\\`')}\`).then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy', 2000); })`}
+                        >
+                          Copy
+                        </button>
+                      </div>
+                      <pre class="p-4 overflow-x-auto"><code class="text-green-400 text-sm">{section.code}</code></pre>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Sidebar TOC -->
+          <div class="hidden lg:block">
+            <div class="sticky top-24">
+              <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">On this page</h3>
+              <nav class="space-y-2">
+                {doc.sections.map((section) => (
+                  <a
+                    href={`#${section.title.toLowerCase().replace(/\s+/g, '-')}`}
+                    class="block text-sm text-gray-600 hover:text-indigo-600 transition-colors"
+                  >
+                    {section.title}
+                  </a>
+                ))}
+              </nav>
+
+              <div class="mt-8 pt-8 border-t border-gray-200">
+                <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">More docs</h3>
+                <nav class="space-y-2">
+                  {docs.filter(d => d.data.slug !== doc.slug).slice(0, 5).map((d) => (
+                    <a
+                      href={`/docs/${d.data.slug}/`}
+                      class="block text-sm text-gray-600 hover:text-indigo-600 transition-colors"
+                    >
+                      {d.data.title}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 p-6 bg-white rounded-2xl border border-gray-200">
+        <div>
+          <h3 class="font-semibold text-gray-900">Was this helpful?</h3>
+          <p class="text-sm text-gray-600">Help us improve the documentation</p>
+        </div>
+        <a href="https://github.com/omnisetorg/website/issues/new" target="_blank"
+           class="px-4 py-2 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+          Suggest an edit
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

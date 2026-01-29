@@ -1,0 +1,19 @@
+{
+  "term": "APT",
+  "slug": "apt",
+  "shortDefinition": "Advanced Package Tool - the package manager used by Debian-based Linux distributions.",
+  "longDefinition": "APT (Advanced Package Tool) is a free-software user interface that works with core libraries to handle the installation and removal of software on Debian and Debian-based Linux distributions like Ubuntu, Linux Mint, and Pop!_OS. APT simplifies the process of managing software by automatically handling dependencies and connecting to online repositories to download packages.",
+  "category": "Package Management",
+  "relatedTerms": ["dpkg", "package-manager", "repository"],
+  "examples": [
+    "sudo apt update - Refresh the list of available packages",
+    "sudo apt install firefox - Install Firefox browser",
+    "sudo apt remove firefox - Remove Firefox",
+    "sudo apt upgrade - Upgrade all installed packages"
+  ],
+  "seo": {
+    "title": "What is APT? | Linux Package Manager Explained",
+    "description": "Learn what APT (Advanced Package Tool) is in Linux. How to use apt commands to install, update, and remove software on Ubuntu and Debian.",
+    "keywords": ["apt linux", "what is apt", "apt commands", "apt install", "linux package manager"]
+  }
+}

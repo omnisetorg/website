@@ -1,0 +1,56 @@
+---
+// Distributions slider section
+const distros = [
+  { name: 'Ubuntu', slug: 'ubuntu', tagline: 'Most popular', logo: '/img/os/ubuntu.svg', url: 'https://ubuntu.com' },
+  { name: 'Debian', slug: 'debian', tagline: 'Rock solid', logo: '/img/os/debian.svg', url: 'https://debian.org' },
+  { name: 'Linux Mint', slug: 'linux-mint', tagline: 'Beginner friendly', logo: '/img/os/linux-mint.svg', url: 'https://linuxmint.com' },
+  { name: 'Pop!_OS', slug: 'pop-os', tagline: 'Developer focused', logo: '/img/os/pop-os.svg', url: 'https://pop.system76.com' },
+  { name: 'Elementary OS', slug: 'elementary', tagline: 'Beautiful design', logo: '/img/os/elementary.svg', url: 'https://elementary.io' },
+  { name: 'Zorin OS', slug: 'zorin-os', tagline: 'Windows-like', logo: '/img/os/zorin-os.svg', url: 'https://zorin.com/os' },
+  { name: 'Kali Linux', slug: 'kali', tagline: 'Security focused', logo: null, url: 'https://kali.org' },
+  { name: 'Raspberry Pi OS', slug: 'raspberry-pi', tagline: 'ARM compatible', logo: '/img/os/rasberry-pi.svg', url: 'https://raspberrypi.org' },
+];
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Compatibility list</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        OmniSet is compatible with all major Debian-based Linux distributions. Choose your favorite or start with
+        Ubuntu if you're new to Linux.
+      </p>
+    </div>
+
+    <div class="relative max-w-full mx-auto mb-12 overflow-hidden">
+      <div class="flex gap-8 py-4 overflow-x-auto distros-slider">
+        {distros.map((distro) => (
+          <a href={distro.url} target="_blank"
+            class="flex-shrink-0 w-40 text-center p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-white rounded-2xl flex items-center justify-center p-3 border border-gray-100">
+              {distro.logo ? (
+                <img src={distro.logo} alt={`${distro.name} Logo`}
+                  class="w-full h-full object-contain max-w-10 max-h-10" />
+              ) : (
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="#557C93" aria-hidden="true">
+                  <path d="M12 2L3 9l9 7 9-7-9-7z" />
+                  <path d="M12 16l-6-5 6 5 6-5-6 5z" />
+                </svg>
+              )}
+            </div>
+            <div class="font-semibold text-gray-900 mb-1">{distro.name}</div>
+            <div class="text-sm text-gray-600">{distro.tagline}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="text-center">
+      <p class="text-gray-600 mb-6 text-lg">
+        <strong class="text-gray-900">New to Linux?</strong> Start with Ubuntu - it has the best hardware support and
+        largest community.
+      </p>
+    </div>
+  </div>
+</section>

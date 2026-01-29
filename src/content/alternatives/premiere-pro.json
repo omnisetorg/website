@@ -1,0 +1,76 @@
+{
+  "title": "Free Premiere Pro Alternatives for Linux",
+  "slug": "premiere-pro",
+  "proprietary": {
+    "name": "Adobe Premiere Pro",
+    "description": "Professional video editing software used in film and TV production. Part of Adobe Creative Cloud.",
+    "price": "$22.99/month or $54.99/month (All Apps)"
+  },
+  "alternatives": [
+    {
+      "name": "DaVinci Resolve",
+      "description": "Hollywood-grade video editor, color grading, VFX, and audio. Used in major film productions. The free version includes almost all features.",
+      "features": [
+        "Professional editing timeline",
+        "Industry-leading color grading",
+        "Fusion VFX compositing",
+        "Fairlight audio post-production",
+        "Multi-user collaboration",
+        "8K support in free version"
+      ],
+      "website": "https://www.blackmagicdesign.com/products/davinciresolve",
+      "rating": 5
+    },
+    {
+      "name": "Kdenlive",
+      "description": "Powerful open-source video editor. Multi-track editing, effects, and good format support. Great for YouTube and content creation.",
+      "features": [
+        "Multi-track timeline",
+        "Keyframe animation",
+        "Many built-in effects",
+        "Proxy editing",
+        "Audio mixing",
+        "Titler tool"
+      ],
+      "website": "https://kdenlive.org",
+      "installCommand": "sudo apt install kdenlive",
+      "rating": 4
+    },
+    {
+      "name": "Shotcut",
+      "description": "Cross-platform video editor with a clean interface. Good for beginners while still offering advanced features.",
+      "features": [
+        "Wide format support",
+        "Native timeline editing",
+        "Hardware encoding",
+        "4K support",
+        "Audio filters",
+        "No import required"
+      ],
+      "website": "https://shotcut.org",
+      "installCommand": "sudo snap install shotcut --classic",
+      "rating": 4
+    },
+    {
+      "name": "OpenShot",
+      "description": "Easy-to-use video editor perfect for beginners. Simple interface but capable of creating professional-looking videos.",
+      "features": [
+        "Drag and drop interface",
+        "Unlimited tracks",
+        "3D animated titles",
+        "Slow motion and time effects",
+        "Audio editing",
+        "Keyframe animation"
+      ],
+      "website": "https://www.openshot.org",
+      "installCommand": "sudo apt install openshot-qt",
+      "rating": 3
+    }
+  ],
+  "verdict": "DaVinci Resolve is the clear winner - it's genuinely professional-grade software used in Hollywood, and the free version is incredibly capable. Kdenlive is the best pure open-source option. OpenShot is great for beginners who need something simple.",
+  "seo": {
+    "title": "Free Premiere Pro Alternatives for Linux | Video Editors",
+    "description": "Best free video editing software for Linux. DaVinci Resolve, Kdenlive, Shotcut compared. Professional editing without Adobe subscription.",
+    "keywords": ["premiere pro alternative linux", "free video editor linux", "davinci resolve linux", "kdenlive", "linux video editing"]
+  }
+}

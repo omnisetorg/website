@@ -1,0 +1,114 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { marked } from 'marked';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((guide) => ({
+    params: { slug: guide.data.slug },
+    props: { guide: guide.data }
+  }));
+}
+
+const { guide } = Astro.props;
+
+const difficultyColors: Record<string, string> = {
+  beginner: 'bg-green-100 text-green-700',
+  intermediate: 'bg-yellow-100 text-yellow-700',
+  advanced: 'bg-red-100 text-red-700'
+};
+---
+
+<BaseLayout
+  title={guide.seo.title}
+  description={guide.seo.description}
+  canonical={`https://omniset.org/guides/${guide.slug}/`}
+>
+  <section class="py-20 bg-gradient-hero text-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class={`text-sm px-3 py-1 rounded-full font-medium ${difficultyColors[guide.difficulty]}`}>
+            {guide.difficulty}
+          </span>
+          <span class="text-sm text-white/70">{guide.timeToComplete}</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">{guide.title}</h1>
+        <p class="text-xl text-white/80">{guide.description}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <!-- Prerequisites -->
+        {guide.prerequisites && guide.prerequisites.length > 0 && (
+          <div class="p-6 bg-yellow-50 rounded-2xl mb-12 border border-yellow-200">
+            <h2 class="font-semibold text-gray-900 mb-4">Prerequisites</h2>
+            <ul class="space-y-2">
+              {guide.prerequisites.map((prereq: string) => (
+                <li class="flex items-start gap-2 text-sm text-gray-600">
+                  <svg class="w-5 h-5 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                  </svg>
+                  {prereq}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <!-- Steps -->
+        <div class="space-y-12">
+          {guide.steps.map((step: {title: string, content: string, code?: string, language?: string, warning?: string}, index: number) => (
+            <div class="relative">
+              <div class="flex items-start gap-6">
+                <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 text-indigo-600 font-bold text-lg">
+                  {index + 1}
+                </div>
+                <div class="flex-1">
+                  <h2 class="text-xl font-bold text-gray-900 mb-4">{step.title}</h2>
+                  <div class="prose-content text-gray-600 mb-4" set:html={marked.parse(step.content)} />
+                  {step.code && (
+                    <div class="bg-gray-900 text-green-400 p-4 rounded-xl font-mono text-sm overflow-x-auto">
+                      <pre>{step.code}</pre>
+                    </div>
+                  )}
+                  {step.warning && (
+                    <div class="mt-4 p-4 bg-orange-50 border border-orange-200 rounded-lg">
+                      <p class="text-sm text-orange-800 flex items-start gap-2">
+                        <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                        {step.warning}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+              {index < guide.steps.length - 1 && (
+                <div class="absolute left-6 top-14 bottom-0 w-0.5 bg-indigo-100 -translate-x-1/2"></div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <!-- Related Guides -->
+        {guide.relatedGuides && guide.relatedGuides.length > 0 && (
+          <div class="mt-12 pt-8 border-t border-gray-200">
+            <h3 class="font-semibold text-gray-900 mb-4">Related Guides</h3>
+            <div class="flex flex-wrap gap-2">
+              {guide.relatedGuides.map((related: string) => (
+                <a href={`/guides/${related}/`} class="text-sm px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-indigo-100 hover:text-indigo-700 transition-colors">
+                  {related}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

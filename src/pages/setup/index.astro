@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const profiles = await getCollection('profiles');
+---
+
+<BaseLayout
+  title="Setup Profiles | OmniSet"
+  description="Pre-configured profiles for different use cases. Developer, gamer, student, designer, and more. One-click Linux setup."
+>
+  <section class="py-20 bg-gradient-hero text-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Setup Profiles</h1>
+        <p class="text-xl text-white/80">
+          Choose a profile that matches how you'll use your computer. Each profile installs curated software for your needs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {profiles.map((profile) => (
+          <a href={`/setup/${profile.data.slug}/`}
+             class="p-6 rounded-2xl border border-gray-200 hover:border-indigo-300 hover:shadow-lg transition-all group">
+            <div class="text-4xl mb-4">{profile.data.emoji}</div>
+            <h2 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">{profile.data.name}</h2>
+            <p class="text-sm text-indigo-600 font-medium mt-1">{profile.data.tagline}</p>
+            <p class="text-gray-600 mt-3 text-sm">{profile.data.description}</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              {profile.data.tools.slice(0, 3).map((tool: string) => (
+                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded">{tool}</span>
+              ))}
+              {profile.data.tools.length > 3 && (
+                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded">+{profile.data.tools.length - 3} more</span>
+              )}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

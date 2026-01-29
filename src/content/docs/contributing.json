@@ -1,0 +1,47 @@
+{
+  "title": "Contributing",
+  "slug": "contributing",
+  "description": "Learn how to contribute to OmniSet - add modules, fix bugs, or improve documentation.",
+  "category": "Community",
+  "order": 6,
+  "icon": "heart",
+  "sections": [
+    {
+      "title": "Ways to Contribute",
+      "content": "There are many ways to help improve OmniSet:\n\n- **Add new modules** - Support for more software\n- **Report bugs** - Found something broken? Let us know\n- **Fix bugs** - Submit pull requests\n- **Improve documentation** - Fix typos or add examples\n- **Test on your distro** - Help ensure compatibility\n- **Spread the word** - Star the repo, tell others"
+    },
+    {
+      "title": "Project Structure",
+      "content": "The OmniSet repository is organized as:\n\n```\nomniset/\n├── bin/omniset          # CLI executable\n├── lib/                 # Core libraries\n├── modules/             # Module definitions\n│   └── <category>/<module>/\n│       ├── manifest.yaml\n│       └── install.sh\n├── web/                 # Web selector interface\n└── README.md\n```"
+    },
+    {
+      "title": "Development Setup",
+      "content": "To work on OmniSet locally:",
+      "code": "# Fork the repository on GitHub, then:\ngit clone https://github.com/YOUR-USERNAME/Install.git\ncd Install\n\n# Create a feature branch\ngit checkout -b feature/your-feature-name\n\n# Test your changes\n./bin/omniset doctor",
+      "language": "bash"
+    },
+    {
+      "title": "Adding a New Module",
+      "content": "To add support for a new application:\n\n1. Create a directory: `modules/<category>/<module-name>/`\n2. Create `manifest.yaml` with installation methods\n3. Create `install.sh` with the installation script\n4. Test on multiple distributions if possible\n5. Submit a pull request"
+    },
+    {
+      "title": "Module Manifest Format",
+      "content": "Each module has a `manifest.yaml` defining how to install it:",
+      "code": "name: example-app\ndescription: Short description\ncategory: development\n\nmethods:\n  - type: apt\n    priority: 1\n    package: example-app\n  \n  - type: snap\n    priority: 2\n    package: example-app\n\npost_install:\n  - echo \"Installation complete\"",
+      "language": "yaml"
+    },
+    {
+      "title": "Guidelines",
+      "content": "When contributing code:\n\n- **Prefer apt/deb packages** - Snap/Flatpak only as fallback\n- **Test on a clean VM** - Don't test on your main system\n- **Follow existing style** - Match the code around you\n- **Keep commits focused** - One feature/fix per commit\n- **Update documentation** - If you add features, document them"
+    },
+    {
+      "title": "Reporting Issues",
+      "content": "When reporting a bug, include:\n\n1. Your Linux distribution and version\n2. The exact error message\n3. Output from `./bin/omniset doctor`\n4. Steps to reproduce the problem\n5. What you expected to happen\n\nOpen issues at: github.com/omnisetorg/Install/issues"
+    }
+  ],
+  "seo": {
+    "title": "Contributing to OmniSet | Developer Guide",
+    "description": "Learn how to contribute to OmniSet. Add new modules, fix bugs, improve documentation, and help make Linux setup easier.",
+    "keywords": ["contribute omniset", "omniset development", "add module omniset", "open source linux"]
+  }
+}

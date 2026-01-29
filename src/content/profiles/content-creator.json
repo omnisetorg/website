@@ -1,0 +1,22 @@
+{
+  "id": "content_creator",
+  "name": "Content Creator",
+  "slug": "content-creator",
+  "emoji": "🎬",
+  "tagline": "Create without limits",
+  "description": "Professional video editing, streaming, and content creation tools. Everything you need to produce and publish content.",
+  "longDescription": "The Content Creator profile transforms your Linux machine into a powerful content production studio. This setup includes professional-grade video editing software, media players, communication tools, and everything else you need to create, edit, and publish content. Whether you're a YouTuber, streamer, podcaster, or social media creator, this profile provides the tools professionals use - without the expensive subscription fees.",
+  "tools": ["essentials", "vscode", "chrome", "davinci-resolve", "discord", "vlc"],
+  "useCases": [
+    "YouTube video production",
+    "Live streaming setup",
+    "Podcast editing",
+    "Social media content",
+    "Video editing and color grading"
+  ],
+  "seo": {
+    "title": "Content Creator Linux Setup | OmniSet",
+    "description": "Set up a professional content creation environment on Linux with OmniSet. DaVinci Resolve, VLC, Discord, and more. Free video editing and streaming tools.",
+    "keywords": ["content creator linux", "video editing linux", "davinci resolve linux", "youtube linux setup", "streaming linux"]
+  }
+}

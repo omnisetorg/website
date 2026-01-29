@@ -1,0 +1,22 @@
+{
+  "id": "gamer",
+  "name": "Gamer",
+  "slug": "gamer",
+  "emoji": "🎮",
+  "tagline": "Play everything, anywhere",
+  "description": "Optimized gaming setup with Steam, Discord, and performance tweaks. Play Windows games on Linux with Proton support.",
+  "longDescription": "The Gamer profile sets up your Linux machine for the best possible gaming experience. Thanks to Proton and Steam Play, you can play thousands of Windows games on Linux. This setup includes Steam with all necessary drivers and libraries, Discord for voice chat with friends, and a web browser for guides and streaming. Performance optimizations ensure smooth gameplay, and the entire setup works out of the box.",
+  "tools": ["essentials", "steam", "discord", "chrome"],
+  "useCases": [
+    "Playing Steam games",
+    "Running Windows games via Proton",
+    "Multiplayer gaming with Discord",
+    "Game streaming",
+    "Emulation and retro gaming"
+  ],
+  "seo": {
+    "title": "Gaming on Linux Setup | OmniSet",
+    "description": "Set up the ultimate Linux gaming rig with OmniSet. Steam, Proton, Discord, and optimized drivers. Play thousands of games on Linux.",
+    "keywords": ["gaming on linux", "linux gaming setup", "steam linux", "proton gaming", "discord linux", "play windows games linux"]
+  }
+}

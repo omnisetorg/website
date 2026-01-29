@@ -1,0 +1,22 @@
+{
+  "id": "data_scientist",
+  "name": "Data Scientist",
+  "slug": "data-scientist",
+  "emoji": "📊",
+  "tagline": "Analyze, visualize, discover",
+  "description": "Complete data science toolkit with Python, databases, containers, and virtual machines for ML workflows.",
+  "longDescription": "The Data Scientist profile provides a comprehensive environment for data analysis, machine learning, and scientific computing. This setup includes containerization for reproducible workflows, database tools, virtual machines for testing, and all the infrastructure needed to work with large datasets. Whether you're doing exploratory data analysis, training ML models, or building data pipelines, this profile has the tools you need.",
+  "tools": ["essentials", "vscode", "chrome", "docker", "dev-language", "dev-storage", "virtualbox"],
+  "useCases": [
+    "Machine learning workflows",
+    "Data analysis and visualization",
+    "Jupyter notebooks and Python",
+    "Database management",
+    "Reproducible research"
+  ],
+  "seo": {
+    "title": "Data Science Linux Setup | OmniSet",
+    "description": "Set up a complete data science environment on Linux with OmniSet. Python, Docker, databases, and ML tools. Perfect for data scientists and analysts.",
+    "keywords": ["data science linux", "machine learning linux", "python data science", "jupyter linux", "linux for data scientists"]
+  }
+}

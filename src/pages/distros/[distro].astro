@@ -1,0 +1,141 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import JsonLd from '@components/seo/JsonLd.astro';
+
+export async function getStaticPaths() {
+  const distros = await getCollection('distros');
+  return distros.map((distro) => ({
+    params: { distro: distro.data.slug },
+    props: { distro: distro.data }
+  }));
+}
+
+const { distro } = Astro.props;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://omniset.org"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Distributions",
+      "item": "https://omniset.org/distros/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": distro.name,
+      "item": `https://omniset.org/distros/${distro.slug}/`
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={distro.seo.title}
+  description={distro.seo.description}
+  canonical={`https://omniset.org/distros/${distro.slug}/`}
+>
+  <Fragment slot="head">
+    <JsonLd schema={breadcrumbSchema} />
+    {distro.seo.keywords && <meta name="keywords" content={distro.seo.keywords.join(', ')} />}
+  </Fragment>
+
+  <section class="py-20 bg-gradient-hero text-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        {distro.logo ? (
+          <div class="w-24 h-24 mx-auto mb-6 bg-white rounded-2xl flex items-center justify-center p-4">
+            <img src={distro.logo} alt={`${distro.name} Logo`} class="w-full h-full object-contain" />
+          </div>
+        ) : (
+          <div class="w-24 h-24 mx-auto mb-6 bg-white/20 rounded-2xl flex items-center justify-center">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+              <path d="M12 2L3 9l9 7 9-7-9-7z" />
+              <path d="M12 16l-6-5 6 5 6-5-6 5z" />
+            </svg>
+          </div>
+        )}
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">OmniSet for {distro.name}</h1>
+        <p class="text-xl text-white/80 mb-8">{distro.tagline}</p>
+        <div
+          class="inline-block bg-white/95 text-gray-900 px-6 py-4 rounded-xl font-mono text-sm md:text-base shadow-xl cursor-pointer hover:bg-white hover:-translate-y-1 transition-all duration-300"
+          onclick="copyToClipboard(this)">
+          wget -qO- https://omniset.org/install | bash
+        </div>
+        <div class="text-sm text-white/60 mt-3">Click to copy command</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">About {distro.name}</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          {distro.longDescription}
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Key features</h3>
+        <ul class="space-y-3 mb-8">
+          {distro.features.map((feature: string) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-600">{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Best for</h3>
+        <div class="flex flex-wrap gap-2 mb-8">
+          {distro.bestFor.map((item: string) => (
+            <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm">
+              {item}
+            </span>
+          ))}
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href={distro.downloadUrl} target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-all hover:-translate-y-0.5">
+            Download {distro.name}
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+          <a href={distro.website} target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-xl hover:border-gray-400 transition-all hover:-translate-y-0.5">
+            Visit official website
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Ready to set up {distro.name}?</h2>
+        <p class="text-gray-600 mb-8">
+          OmniSet will automatically detect your distribution and configure everything for you.
+        </p>
+        <a href="/#get-started" class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-all hover:-translate-y-0.5">
+          Get started with OmniSet
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

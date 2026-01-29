@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const alternatives = await getCollection('alternatives');
+---
+
+<BaseLayout
+  title="Linux Alternatives to Popular Software | OmniSet"
+  description="Find open-source Linux alternatives to popular proprietary software. Replace Photoshop, Microsoft Office, Premiere Pro, and more."
+>
+  <section class="py-20 bg-gradient-hero text-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Software Alternatives</h1>
+        <p class="text-xl text-white/80">
+          Discover powerful open-source alternatives to popular proprietary software.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {alternatives.map((alt) => (
+          <a href={`/alternatives/${alt.data.slug}/`}
+             class="p-6 rounded-2xl border border-gray-200 hover:border-indigo-300 hover:shadow-lg transition-all group">
+            <h2 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors mb-2">
+              {alt.data.proprietary.name} Alternatives
+            </h2>
+            <p class="text-gray-600 text-sm mb-4">{alt.data.proprietary.description}</p>
+            <div class="text-sm text-indigo-600">
+              {alt.data.alternatives.length} alternatives →
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

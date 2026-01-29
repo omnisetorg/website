@@ -1,0 +1,19 @@
+{
+  "term": "Terminal",
+  "slug": "terminal",
+  "shortDefinition": "A text-based interface for interacting with your computer through commands.",
+  "longDefinition": "The terminal (also called command line, console, or shell) is a text-based interface that lets you interact with your computer by typing commands. While it may seem intimidating at first, the terminal is incredibly powerful and often faster than graphical interfaces for many tasks. It's essential for system administration, development, and automation. The terminal runs a shell program (like Bash or Zsh) that interprets your commands.",
+  "category": "Basics",
+  "relatedTerms": ["bash", "shell", "cli"],
+  "examples": [
+    "Open terminal with Ctrl+Alt+T on Ubuntu",
+    "ls - list files in current directory",
+    "cd Documents - change to Documents folder",
+    "pwd - print current working directory"
+  ],
+  "seo": {
+    "title": "What is the Linux Terminal? | Command Line Explained",
+    "description": "Learn what the Linux terminal is and how to use it. Basic commands, why the command line is powerful, and getting started guide.",
+    "keywords": ["linux terminal", "command line linux", "terminal commands", "bash terminal", "linux cli"]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "zorin-os",
+  "name": "Zorin OS",
+  "slug": "zorin-os",
+  "tagline": "Windows-like",
+  "description": "Designed to replicate the Windows experience. Zorin OS makes switching from Windows completely painless.",
+  "longDescription": "Zorin OS is specifically designed for Windows users who want to switch to Linux. Its appearance can be configured to look exactly like Windows 11, Windows 10, or even macOS, making the transition completely seamless. It includes Windows app support through Wine, so many Windows applications run without modification. For organizations migrating from Windows, Zorin OS Pro offers additional layouts and premium support.",
+  "logo": "/img/os/zorin-os.svg",
+  "website": "https://zorin.com/os",
+  "gradient": "gradient-zorin",
+  "features": [
+    "Windows-like appearance",
+    "Windows app compatibility",
+    "Zorin Connect for phone integration",
+    "Multiple desktop layouts",
+    "Touch-friendly interface"
+  ],
+  "bestFor": [
+    "Windows users",
+    "Organizations migrating to Linux",
+    "Users who need Windows apps",
+    "Touch screen users"
+  ],
+  "downloadUrl": "https://zorin.com/os/download/",
+  "seo": {
+    "title": "OmniSet for Zorin OS | Windows-Like Linux",
+    "description": "Configure Zorin OS with OmniSet. The easiest way to switch from Windows to Linux. Familiar interface, powerful Linux underneath.",
+    "keywords": ["zorin os setup", "windows alternative", "linux windows look", "switch from windows", "omniset zorin"]
+  }
+}

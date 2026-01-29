@@ -1,0 +1,30 @@
+{
+  "id": "ubuntu",
+  "name": "Ubuntu",
+  "slug": "ubuntu",
+  "tagline": "Most popular",
+  "description": "The world's most popular Linux distribution. Ubuntu offers an easy-to-use experience with excellent hardware support.",
+  "longDescription": "Ubuntu is the gold standard for Linux desktop distributions. Backed by Canonical, it offers long-term support releases, extensive documentation, and the largest community of any Linux distribution. Ubuntu's software center makes installing applications simple, and its vast hardware compatibility means it works on almost any computer. Whether you're new to Linux or a seasoned pro, Ubuntu provides a polished, stable experience.",
+  "logo": "/img/os/ubuntu.svg",
+  "website": "https://ubuntu.com",
+  "gradient": "gradient-ubuntu",
+  "features": [
+    "Long-term support (LTS) releases",
+    "Massive software repository",
+    "Excellent hardware support",
+    "User-friendly interface",
+    "Strong corporate backing"
+  ],
+  "bestFor": [
+    "Linux beginners",
+    "Desktop users",
+    "Developers",
+    "Enterprise environments"
+  ],
+  "downloadUrl": "https://ubuntu.com/download/desktop",
+  "seo": {
+    "title": "OmniSet for Ubuntu | Easy Linux Setup",
+    "description": "Set up Ubuntu with OmniSet - the easiest way to configure your Ubuntu Linux environment. One command installs all your favorite tools and applications.",
+    "keywords": ["ubuntu setup", "ubuntu configuration", "ubuntu tools", "ubuntu for beginners", "omniset ubuntu"]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "title": "Ubuntu vs Debian",
+  "slug": "ubuntu-vs-debian",
+  "itemA": {
+    "name": "Ubuntu",
+    "logo": "/img/os/ubuntu.svg",
+    "pros": [
+      "Easier for beginners",
+      "Better hardware support out of the box",
+      "Larger community and more tutorials",
+      "Regular release schedule (every 6 months)",
+      "Commercial support available",
+      "PPAs for newer software"
+    ],
+    "cons": [
+      "Includes some proprietary components",
+      "Snap packages can be controversial",
+      "More bloated than Debian",
+      "Canonical makes some unpopular decisions"
+    ],
+    "bestFor": "Beginners, desktop users, and those who want things to work out of the box"
+  },
+  "itemB": {
+    "name": "Debian",
+    "logo": "/img/os/debian.svg",
+    "pros": [
+      "Extremely stable",
+      "100% free software commitment",
+      "Minimal and clean installation",
+      "Foundation for many other distros",
+      "Strong security track record",
+      "Available on many architectures"
+    ],
+    "cons": [
+      "Older packages in stable release",
+      "Hardware support may require extra work",
+      "Steeper learning curve",
+      "Less beginner-friendly documentation"
+    ],
+    "bestFor": "Servers, experienced users, and those who prioritize stability over new features"
+  },
+  "verdict": "Choose Ubuntu if you're new to Linux or want a polished desktop experience. Choose Debian if you prioritize stability, run servers, or prefer a minimal system you build up yourself.",
+  "comparisonTable": [
+    {"feature": "Ease of Use", "itemA": "Excellent", "itemB": "Moderate"},
+    {"feature": "Stability", "itemA": "Good", "itemB": "Excellent"},
+    {"feature": "Package Freshness", "itemA": "Recent", "itemB": "Older (stable)"},
+    {"feature": "Hardware Support", "itemA": "Excellent", "itemB": "Good"},
+    {"feature": "Community Size", "itemA": "Very Large", "itemB": "Large"},
+    {"feature": "Server Use", "itemA": "Good", "itemB": "Excellent"},
+    {"feature": "Customization", "itemA": "Good", "itemB": "Excellent"},
+    {"feature": "Free Software Purity", "itemA": "Partial", "itemB": "Strong"}
+  ],
+  "seo": {
+    "title": "Ubuntu vs Debian: Which Linux Distro Should You Choose?",
+    "description": "Detailed comparison of Ubuntu and Debian. Pros, cons, and which distribution is right for your needs. Desktop vs server use cases.",
+    "keywords": ["ubuntu vs debian", "debian vs ubuntu", "best linux distro", "linux comparison", "ubuntu or debian"]
+  }
+}

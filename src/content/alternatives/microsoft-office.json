@@ -1,0 +1,76 @@
+{
+  "title": "Free Microsoft Office Alternatives for Linux",
+  "slug": "microsoft-office",
+  "proprietary": {
+    "name": "Microsoft Office",
+    "description": "The dominant office suite with Word, Excel, and PowerPoint. Not available natively on Linux.",
+    "price": "$69.99/year (Personal) or $99.99/year (Family)"
+  },
+  "alternatives": [
+    {
+      "name": "LibreOffice",
+      "description": "The most complete free office suite. Includes Writer, Calc, Impress, and more. Excellent Microsoft format compatibility.",
+      "features": [
+        "Writer - Word processor",
+        "Calc - Spreadsheet",
+        "Impress - Presentations",
+        "Draw - Vector graphics",
+        "MS Office format support",
+        "PDF export built-in",
+        "Extensions available"
+      ],
+      "website": "https://www.libreoffice.org",
+      "installCommand": "sudo apt install libreoffice",
+      "rating": 5
+    },
+    {
+      "name": "OnlyOffice",
+      "description": "Modern interface that closely matches Microsoft Office. Best compatibility with MS formats among free options.",
+      "features": [
+        "Microsoft-like ribbon interface",
+        "Excellent DOCX/XLSX/PPTX support",
+        "Real-time collaboration",
+        "Document management",
+        "Plugin support",
+        "Self-hosted option"
+      ],
+      "website": "https://www.onlyoffice.com",
+      "installCommand": "sudo snap install onlyoffice-desktopeditors",
+      "rating": 5
+    },
+    {
+      "name": "Google Workspace (Docs/Sheets/Slides)",
+      "description": "Free browser-based office suite. Best for collaboration and cloud storage. Works on any OS.",
+      "features": [
+        "Real-time collaboration",
+        "Cloud-based (works anywhere)",
+        "MS Office format support",
+        "15GB free storage",
+        "Offline mode available",
+        "Mobile apps"
+      ],
+      "website": "https://workspace.google.com",
+      "rating": 4
+    },
+    {
+      "name": "WPS Office",
+      "description": "Polished office suite with good Microsoft compatibility. Free version has ads, premium removes them.",
+      "features": [
+        "Clean, modern interface",
+        "Good MS format support",
+        "PDF tools included",
+        "Tabbed interface",
+        "Cloud integration",
+        "Templates library"
+      ],
+      "website": "https://www.wps.com",
+      "rating": 4
+    }
+  ],
+  "verdict": "LibreOffice is the best all-around choice - it's powerful, free, and handles most MS Office files well. OnlyOffice is best if you frequently exchange files with MS Office users. Google Docs is ideal for collaboration.",
+  "seo": {
+    "title": "Free Microsoft Office Alternatives for Linux",
+    "description": "Best free Microsoft Office alternatives for Linux. LibreOffice, OnlyOffice, Google Docs compared. Word, Excel, PowerPoint replacements.",
+    "keywords": ["microsoft office alternative linux", "libreoffice", "free office suite", "word alternative", "excel alternative linux"]
+  }
+}

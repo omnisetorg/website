@@ -1,0 +1,29 @@
+{
+  "id": "vscode",
+  "name": "VS Code",
+  "slug": "vscode",
+  "category": "Development",
+  "icon": "code",
+  "description": "The most popular code editor in the world. VS Code offers powerful features, extensions, and a great developer experience.",
+  "longDescription": "Visual Studio Code is a free, open-source code editor from Microsoft that has become the industry standard. It supports virtually every programming language through extensions, includes integrated Git, debugging, and terminal. The extension marketplace offers thousands of plugins for additional features. OmniSet installs VS Code and can optionally configure popular extensions for your chosen development profile.",
+  "features": [
+    "IntelliSense code completion",
+    "Built-in Git integration",
+    "Integrated terminal",
+    "Extensive extension marketplace",
+    "Remote development support"
+  ],
+  "alternatives": ["Sublime Text", "Vim", "JetBrains IDEs"],
+  "installCommand": "snap install code --classic",
+  "website": "https://code.visualstudio.com",
+  "seo": {
+    "title": "Install VS Code on Linux with OmniSet",
+    "description": "Install Visual Studio Code on Linux with OmniSet. Get the best code editor configured and ready with recommended extensions for your development workflow.",
+    "keywords": ["vscode linux", "install visual studio code ubuntu", "code editor linux", "vs code setup", "linux ide"]
+  },
+  "schema": {
+    "type": "SoftwareApplication",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Linux"
+  }
+}

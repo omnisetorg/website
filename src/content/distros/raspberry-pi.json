@@ -1,0 +1,30 @@
+{
+  "id": "raspberry-pi",
+  "name": "Raspberry Pi OS",
+  "slug": "raspberry-pi",
+  "tagline": "ARM compatible",
+  "description": "The official operating system for Raspberry Pi computers. Optimized for ARM architecture and the Pi's unique hardware.",
+  "longDescription": "Raspberry Pi OS is the official operating system for the incredibly popular Raspberry Pi single-board computers. Based on Debian, it's optimized for the Pi's ARM processor and includes software for GPIO access, camera modules, and other Pi-specific hardware. Whether you're building a media center, learning to code, or creating IoT projects, Raspberry Pi OS provides the foundation you need.",
+  "logo": "/img/os/rasberry-pi.svg",
+  "website": "https://raspberrypi.org",
+  "gradient": "gradient-pi",
+  "features": [
+    "ARM optimization",
+    "GPIO and hardware access",
+    "Lightweight for limited resources",
+    "Educational software included",
+    "Excellent documentation"
+  ],
+  "bestFor": [
+    "Raspberry Pi owners",
+    "IoT projects",
+    "Education",
+    "Home automation"
+  ],
+  "downloadUrl": "https://www.raspberrypi.com/software/",
+  "seo": {
+    "title": "OmniSet for Raspberry Pi OS | Pi Setup Made Easy",
+    "description": "Set up your Raspberry Pi with OmniSet. Configure your Pi for development, media center, or desktop use with one simple command.",
+    "keywords": ["raspberry pi setup", "raspberry pi os", "pi configuration", "arm linux", "omniset raspberry pi"]
+  }
+}
